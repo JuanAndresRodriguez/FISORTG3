@@ -7,17 +7,34 @@
 
 ## Repositorio
 
-  
+**Como vamos a utilizar repo locales y remotos?**
+- Vamos a utilizar las ramas 'main' y 'develop' como las 2 ramas principales, siendo 'main' producción y 'develop' pre-producción, luego también utilizaremos ramas por cada feature que estaremos agregando a la app.
+>ejemplo: queremos agregar la funcionalidad de agregar categorías, creamos la rama local 'feature/agregar_categorias', rama en la cual vamos a trabajar localmente y luego al haber terminado, hacer un merge con 'develop'. 
+Una vez testeado los cambios, si todo está correcto, se hacer merge con main. 
 
-placeholder
+**Comandos git a utilizar:**
+- git init
+- git clone
+- git commit
+- git pull
+- git push
+- git merge
+- git branch
+- git checkout
+- git add
 
   
 
 ## Versionado
 
-  
-
-placeholder
+**Buenas practicas del versionado**
+Como fue explicado en el punto anterior, usaremos el versionado de git, subiendo cada feature bajo una rama distinta, para así poder identificar y hacer un rollback de la forma más rapida posible.
+**Uso de las ramas separadas de main**
+También utilizaremos la rama 'develop' como pre-produccion, es decir como una rama de test antes de subir los cambios a main para asi poder evitar subir errores a produccion.
+**Resumen de comits y evolución del proyecto**
+El nombre de las ramas de features van a seguir un patrón para facilitar el entendimiento de esta y también a la hora del commit, se le agregará un comentario que resuma brevemente la razon de la rama.
+>Por ejemplo: quiero agregar la funcionalidad de crear una pagina de FAQ, la rama podría llamarse feature/crear_pagina_FAQ y luego commitearse con el mensaje ' se agrega la pagina FAQ a la app'
+En caso de bugs, el nombre puede ser hotfix/nombre_de_rama
 
   
 

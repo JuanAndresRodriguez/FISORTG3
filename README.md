@@ -165,6 +165,9 @@ Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas:
 ![Elizabeth](elicitacion/user-persona/persona-elizabeth.png?raw=true  "Elizabeth")
 ![Martin](elicitacion/user-persona/persona-martin.png?raw=true  "Martin")
 
+### Mapa preliminar de funcionalidades
+![](esquema-funcionalidades.jpeg?raw=true  "Funcionalidades")
+
 
 ## Especificación
   
@@ -203,68 +206,68 @@ Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas:
 
 
 ## Requerimientos no funcionales:
-**RNF1:** El sistema en su v1 deberá soportar 100 usuarios concurrentes.
-**RNF2:** El sistema en su v1 deberá funcionar en ios 14 y android 9.0. 
-**RNF3:** El sistema utilizará https como método de seguridad. 
-**RNF4:** El sistema utilizará SQRC como método de seguridad para los códigos QR.
-**RNF5:** El sistema en su v1 deberá tener como idioma el español e ingles.
+* **RNF1:** El sistema en su v1 deberá soportar 100 usuarios concurrentes.
+* **RNF2:** El sistema en su v1 deberá funcionar en ios 14 y android 9.0. 
+* **RNF3:** El sistema utilizará https como método de seguridad. 
+* **RNF4:** El sistema utilizará SQRC como método de seguridad para los códigos QR.
+* **RNF5:** El sistema en su v1 deberá tener como idioma el español e ingles.
 
-**Casos de Uso**
+## Casos de Uso
 
-#### Ingreso de Una Factura por QR
-Actores: Usuario
-Precondición: El usuario ya realizó un gasto.
-Sinopsis: El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. La cámara se abre y saca una foto al QR. El monto es registrado y le pide asignarle una categoría.
-Curso básico:
-	1) (Usuario) Abre la aplicación
-	2) (Sistema) Muestra el menú de opciones
-	3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
-	4) (Sistema) Muestra intefaz para agregar gasto.
-	5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
-	6) (Usuario) Apreta el ícono del botón QR
-	7) (Sistema) Abre la cámara
-	8) (Usuario) Toma una foto al QR
-	9) (Sistema) Lee el QR y obtiene del mismo el monto de la factura. Vuelve al menú anterior.
-	10) (Usuario) Presiona Agregar
-	11) (Sistema) El gasto es registrado en el sistema.
+### Ingreso de Una Factura por QR
+**Actores:** Usuario
+**Precondición:** El usuario ya realizó un gasto.
+**Sinopsis:** El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. La cámara se abre y saca una foto al QR. El monto es registrado y le pide asignarle una categoría.
+**Curso básico:**
+* 1) (Usuario) Abre la aplicación
+* 2) (Sistema) Muestra el menú de opciones
+* 3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
+* 4) (Sistema) Muestra intefaz para agregar gasto.
+* 5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
+* 6) (Usuario) Apreta el ícono del botón QR
+* 7) (Sistema) Abre la cámara
+* 8) (Usuario) Toma una foto al QR
+* 9) (Sistema) Lee el QR y obtiene del mismo el monto de la factura. Vuelve al menú anterior.
+* 10) (Usuario) Presiona Agregar
+* 11) (Sistema) El gasto es registrado en el sistema.
 
 <img src="elicitacion/especificacion/UI/home.png" >
 <img src="elicitacion/especificacion/UI/home-add.png" >
 <img src="elicitacion/especificacion/UI/gasto.png" >
 
-Curso alternativo: Si el QR no se lee, da mensaje error al leer QR y vuelve al menú anterior. Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
+**Curso alternativo:** Si el QR no se lee, da mensaje error al leer QR y vuelve al menú anterior. Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
 
-#### Ingreso de Una Factura por imputando el monto
-Actores: Usuario
-Precondición: El usuario ya realizó un gasto.
-Sinopsis: El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. El menú se abre y ofrece el campo para ingresar el monto de forma manual. El monto es registrado y le pide asignarle una categoría.
-Curso básico:
-	1) (Usuario) Abre la aplicación
-	2) (Sistema) Muestra el menú de opciones
-	3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
-	4) (Sistema) Muestra intefaz para agregar gasto.
-	5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
-	6) (Usuario) Imputa el monto en el campo que ofrece el menú.
-	7) (Usuario) Presiona Agregar
-	8) (Sistema) El gasto es registrado en el sistema.
+### Ingreso de Una Factura por imputando el monto
+**Actor:** Usuario
+**Precondición:** El usuario ya realizó un gasto.
+**Sinopsis:** El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. El menú se abre y ofrece el campo para ingresar el monto de forma manual. El monto es registrado y le pide asignarle una categoría.
+**Curso básico:**
+* 1) (Usuario) Abre la aplicación
+* 2) (Sistema) Muestra el menú de opciones
+* 3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
+* 4) (Sistema) Muestra intefaz para agregar gasto.
+* 5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
+* 6) (Usuario) Imputa el monto en el campo que ofrece el menú.
+* 7) (Usuario) Presiona Agregar
+* 8) (Sistema) El gasto es registrado en el sistema.
 	
 <img src="elicitacion/especificacion/UI/home.png" >
 <img src="elicitacion/especificacion/UI/home-add.png" >
 <img src="elicitacion/especificacion/UI/gasto.png" >
 
-Curso alternativo: Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
+**Curso alternativo:** Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
   
-#### Poner Ingresos mensuales
-Actores: Usuario
-Precondición: El usuario cuenta con ingresos mensuales y conoce el monto.
-Sinopsis: El usuario quiere registrar sus ingresos en la aplicación.
-Cusro básico:
-	1) (Usuario) Abre la aplicación
-	2) (Sistema) Muestra el menú de opciones
-	3) (Usuario) Elije del menú Agregar Ingreso.
-	4) (Sistema) Muestra el menú de Agregar Ingreso
-	5) (Usuario) Completa el nombre del ingreso, el monto y la moneda. Además puede programarlo como ingreso mensual, o puede dejarlo solo como ingreso del mes corriente.
-	6) (Sistema) Registra el gasto.
+### Poner Ingresos mensuales
+**Actores:** Usuario
+**Precondición:** El usuario cuenta con ingresos mensuales y conoce el monto.
+**Sinopsis:** El usuario quiere registrar sus ingresos en la aplicación.
+**Cusro básico:**
+* 1) (Usuario) Abre la aplicación
+* 2) (Sistema) Muestra el menú de opciones
+* 3) (Usuario) Elije del menú Agregar Ingreso.
+* 4) (Sistema) Muestra el menú de Agregar Ingreso
+* 5) (Usuario) Completa el nombre del ingreso, el monto y la moneda. Además puede programarlo como ingreso mensual, o puede dejarlo solo como ingreso del mes corriente.
+* 6) (Sistema) Registra el gasto.
 
 <img src="elicitacion/especificacion/UI/home.png" >
 <img src="elicitacion/especificacion/UI/home-add.png" >
@@ -279,27 +282,27 @@ Cusro básico:
 <img src="elicitacion/especificacion/UI/side-menu.png" >
 
 
-**Historias de Usuarios**
+## Historias de Usuarios
 
 ### Historia usuario Martín
-Título: Quiero aprender a ahorrar.
+**Título:** Quiero aprender a ahorrar.
 
-Cómo: Quiero poder medir mis ingesos y egresos y aprender a priorizar los gastos para llegar a mis objetivos de ahorro.
+**Como** Quiero poder medir mis ingesos y egresos y aprender a priorizar los gastos para llegar a mis objetivos de ahorro.
 
-Criterios de aceptación:
-	- Le muestra sus objetivos de ahorro y su grado de cumplimiento.
-	- Le da tips para ahorrar.
-	- Le permite ingresas de forma cómoda en pocos pasos sus gastos y clasificarlos.
+**Criterios de aceptación:**
+- Le muestra sus objetivos de ahorro y su grado de cumplimiento.
+- Le da tips para ahorrar.
+- Le permite ingresas de forma cómoda en pocos pasos sus gastos y clasificarlos.
 
 ### Historia usuario Elizabeth
 Título: Controlar gastos con ingresos variables.
 
-Cómo: Quiero poder planificar mis gastos y tener cuenta de datos históricos, ya que mis ingresos son variables por comisión.
+**Como** Quiero poder planificar mis gastos y tener cuenta de datos históricos, ya que mis ingresos son variables por comisión.
 
-Criterios de aceptación:
-	- Le permite agregar diferentes montos de ingreso cada mes
-	- Le permite fijar diferentes objetivos de ahorro mensuales.
-	- Le muestra un histórico de sus gastos.
+**Criterios de aceptación:**
+- Le permite agregar diferentes montos de ingreso cada mes
+- Le permite fijar diferentes objetivos de ahorro mensuales.
+- Le muestra un histórico de sus gastos.
 
 ## Validación y verificación
 

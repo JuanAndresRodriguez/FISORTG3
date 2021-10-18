@@ -321,11 +321,25 @@ También se sugirió poder cambiar el tema oscuro que se utilizó a un tema de c
 
 ## Reflexión
 
-  
+### Individuales
 
-  
+Reflexión Juan Rodríguez.
 
-test
+En cuanto al trabajo con el que colaboré, fue:
+ - En la tormenta de ideas, el realizar una de las entrevistas y sacar conclusiones de ambas.
+ - Recopilar los distintos comandos de git que utilizamos y explicar su uso.
+ - Aportar requerimientos funcionales y no funcionales a la lista final.
+ - Realizar uno de los perfiles de User Persona.
+ - Desarrollar los user cases y user stories.
+ - Presentar la aplicación a terceros para su validación.
+ - Y verificar los requerimientos funcionales.
+
+Me gusto la tarea de repasar todo lo previo al desarrollo. 
+No siempre he tendio la oportunidad de participar del proceso en la vida real, y en ocasiones cuando si participé no fue de forma ordenada y sistemática siempre. 
+El pasaje de usar git estrictamente desde la consola y no desde la interfaz gráfica para guardar el trabajo una vez terminado desde la máquina, me sirvió para tener un mayor entendimiento y mejorar el uso que le doy a la herramienta. 
+Estimar que quiere realmente el usuario me parece el desafío más grande de todos. 
+Incluso con la documentación y el prototipado pueden quedar diferencias entre las necesidades de los usuarios y el producto final, pero el uso de metodologías de ingeniería de software sirve claramente para acortar esas distancias.
+La participación de mis compañeros que trabajan estrictamente en desarrollo, a diferencia mía que tengo un background de analytics, me sirvió para ir más rápido y adaptarme a la forma de trabajo sin problemas.
 
   
 

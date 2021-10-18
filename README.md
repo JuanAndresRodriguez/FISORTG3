@@ -341,7 +341,13 @@ Estimar que quiere realmente el usuario me parece el desafío más grande de tod
 Incluso con la documentación y el prototipado pueden quedar diferencias entre las necesidades de los usuarios y el producto final, pero el uso de metodologías de ingeniería de software sirve claramente para acortar esas distancias.
 La participación de mis compañeros que trabajan estrictamente en desarrollo, a diferencia mía que tengo un background de analytics, me sirvió para ir más rápido y adaptarme a la forma de trabajo sin problemas.
 
-  
+  ## Reflexión Guillermo Ramirez:
+
+Este fue un proyecto interesante ya que no son cosas que como desarrollador normalmente hacemos, no tendemos a estar en la parte de la organización y la creación de un proyecto, por lo que todo esto es nuevo y muy util.
+
+Personalmente no me gusta pensar en el target de una aplicación, pero reconozco que es una parte muy util al comenzar un proyecto, considero que me interesa mas la parte de las funcionalidades a desarrollar y como desarollarlas.
+
+El uso de git no me fue tan difícil ya que previamente trabajé con gitlab y tenía conocimiento previo sobre como trabajar con ramas locales y remotas.
 
 ## Anexos
 

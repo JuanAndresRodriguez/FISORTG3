@@ -214,9 +214,56 @@ Dentro
 
 - Debe soportar tanto el idioma Español como Ingles.
 
-  
 
+**Casos de Uso**
+
+#### Ingreso de Una Factura por QR
+Actores: Usuario
+Precondición: El usuario ya realizó un gasto.
+Sinopsis: El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. La cámara se abre y saca una foto al QR. El monto es registrado y le pide asignarle una categoría.
+Curso básico:
+	1) (Usuario) Abre la aplicación
+	2) (Sistema) Muestra el menú de opciones
+	3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
+	4) (Sistema) Muestra intefaz para agregar gasto.
+	5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
+	6) (Usuario) Apreta el ícono del botón QR
+	7) (Sistema) Abre la cámara
+	8) (Usuario) Toma una foto al QR
+	9) (Sistema) Lee el QR y obtiene del mismo el monto de la factura. Vuelve al menú anterior.
+	10) (Usuario) Presiona Agregar
+	11) (Sistema) El gasto es registrado en el sistema.
+	
+Curso alternativo: Si el QR no se lee, da mensaje error al leer QR y vuelve al menú anterior. Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
+
+#### Ingreso de Una Factura por imputando el monto
+Actores: Usuario
+Precondición: El usuario ya realizó un gasto.
+Sinopsis: El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. El menú se abre y ofrece el campo para ingresar el monto de forma manual. El monto es registrado y le pide asignarle una categoría.
+Curso básico:
+	1) (Usuario) Abre la aplicación
+	2) (Sistema) Muestra el menú de opciones
+	3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
+	4) (Sistema) Muestra intefaz para agregar gasto.
+	5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
+	6) (Usuario) Imputa el monto en el campo que ofrece el menú.
+	7) (Usuario) Presiona Agregar
+	8) (Sistema) El gasto es registrado en el sistema.
+	
+Curso alternativo: Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
   
+#### Poner Ingresos mensuales
+Actores: Usuario
+Precondición: El usuario cuenta con ingresos mensuales y conoce el monto.
+Sinopsis: El usuario quiere registrar sus ingresos en la aplicación.
+Cusro básico:
+	1) (Usuario) Abre la aplicación
+	2) (Sistema) Muestra el menú de opciones
+	3) (Usuario) Elije del menú Agregar Ingreso.
+	4) (Sistema) Muestra el menú de Agregar Ingreso
+	5) (Usuario) Completa el nombre del ingreso, el monto y la moneda. Además puede programarlo como ingreso mensual, o puede dejarlo solo como ingreso del mes corriente.
+	6) (Sistema) Registra el gasto.
+	
 
 ## Validación y validación
 

@@ -349,6 +349,25 @@ Personalmente no me gusta pensar en el target de una aplicación, pero reconozco
 
 El uso de git no me fue tan difícil ya que previamente trabajé con gitlab y tenía conocimiento previo sobre como trabajar con ramas locales y remotas.
 
+En el trabajo grupal mi aporte fue principalmente en las siguientes áreas:
+
+## Reflexión Nicolas Vega:
+
+- Mantener la integridad general del repositorio en GitHub
+- Buscar posibles soluciones a problemas recurrentes en cuanto a la obtención de datos en la etapa de elicitacion
+- Crear un User Persona, el diagrama de brainstorm y anexos
+- Realizar estudio de ingeniería inversa en una de las aplicaciones
+- Crear boceto de UI
+- Presentar herramientas de trabajo al equipo
+- Aportar conocimientos técnicas en todas las partes del proceso
+
+
+En cuanto al trabajo en equipo, me pareció que se llevo a cabo con gran creatividad y volumen de aportes.
+En mi caso, me siento muy cómodo al poder tener charlas distendidas en cuanto al proyecto, así como también el poder generar instancias técnicas especificas.
+Teniendo en eso en cuenta, este proyecto me dejo muy satisfecho gracias a que lo cumplió de gran manera. A la hora de trabajar con mis compañeros sentí que podia adquirir conocimiento en areas en las que no tengo experiencia.
+Pasando al punto de elicitacion, me encontré en un ambito totalmente nuevo para mi. Mi trabajo dia a dia es en una empresa de producto, por lo que no tengo contacto con clientes directamente. El hecho de tener que realizar una investigación antes del desarrollo abre la puerta a muchas mejoras, y la capacidad de prevenir errores.
+Siento que es un aprendizaje que me cambio la forma de pensar al enfrentarme a nuevas tareas dentro del campo del desarrollo de software.
+
 ## Anexos
 
   

@@ -303,15 +303,18 @@ Criterios de aceptación:
 
 ## Validación y verificación
 
-  
+En cuanto a la validación del prototipo, la aplicación fue aceptada como razonable, y de uso entendible por su intergaz amigable e intuitiva. En cuanto a sugerencias de los usuarios, se indicó que pueden agregarse también los ahorros ya existentes del usuario, previo a empezar a usar la aplicación.
+También se sugirió poder cambiar el tema oscuro que se utilizó a un tema de colores claros opcional, por preferencias estéticas.
 
   
-
-placeholder
-
-  
-
-  
+|Nro. Req.|R1|R2|R3|R4|R5|R6|
+|---------|--|--|--|--|--|--|
+|¿Es viable? (Factible de ser hecho)|Si|Si|Si|Si|Si|Si|
+|¿Es consistente? (No se contradice con los otros req.)|Si|Si|Si|Si|Si|Si|
+|¿Es preciso y no ambiguo?|Si|Si|Si|Si|Si|Si|
+|¿Es verificable?|Si|Si|Si|Si|Si|Si|
+|¿Tiene una prioridad?|Si|Si|Si|Si|Si|Si|
+|¿Se identifica claramente el origen?|Si|Si|Si|Si|Si|Si|
 
 ## Reflexión
 

@@ -177,55 +177,46 @@ Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas:
   
 
   
+## Requerimientos funcionales
+#### El unico actor que tendremos va a ser el usuario
 
-- Permitir agregar / quitar gastos completamente customisables.
+## RF1: Permitir agregar / quitar gastos.
+ - **Actor:** Usuario.
+ - **Descripción:** El sistema deberá permitir al cliente agregar gastos completamente customizables, el cliente al apretar el botón de agregar, le va a aparecer un formulario con los detalles de la compra para que luego este se agregue al balance. Tambien al tocar el botón de quitar, este gasto se debe eliminar.
+ - **Prioridad:** Alta.
+ 
+ ## RF2: Permitir agregar categorías para los gastos.
+ - **Actor:** Usuario.
+ - **Descripción:** El sistema deberá permitir al cliente agregar categorías para ordenar mejor los gastos y darle al cliente mas visibilidad al ver los gastos que realizó lo cual ayudará al cliente a sacar mejores conclusiones.
+ - **Prioridad:** Alta.
 
-  
+## RF3: Permitir linkear la cuenta de banco con la aplicación.
+ - **Actor:** Usuario.
+ - **Descripción:** El sistema deberá permitir al cliente agregar una cuenta bancaria para así automatizar completamente todos los gastos e ingresos.
+ - **Prioridad:** Media.
 
-- Permitir agregar / quitar categorías para los gastos.
+## RF4: Importar pagos mediante el QR de los recibos.
+ - **Actor:** Usuario.
+ - **Descripción:** El sistema deberá permitir al cliente agregar gastos mediante el código QR que tienen los recibos, de este se podrá sacar el monto del gasto y la fecha.
+ - **Prioridad:** Alta.
+ 
+ ## RF5: Se debe poder indicar una cantidad de ahorro mensual o anual deseado.
+ - **Actor:** Usuario.
+ - **Descripción:** El sistema deberá permitir al cliente agregar un ahorro deseado, y que avise al cliente cuando los gastos excedan el limite teniendo este ahorro en cuenta.
+ - **Prioridad:** media.
 
-  
+ ## RF6: Agregar metas a alcanzar.
+ - **Actor:** Usuario.
+ - **Descripción:** El sistema deberá permitir al cliente agregar metas a cumplir, y luego estas metas se deberán tener en cuenta como un gasto mensual hasta que la fecha de esta meta llegue.
+ - **Prioridad:** media.
 
-- Permitir linkear la cuenta de banco con la aplicación para automatizar los pagos.
 
-  
-
-- Planificar los gastos.
-
-  
-
-- Importar pagos mediante el QR de los recibos.
-
-  
-
-- Se debe poder indicar una cantidad de ahorro mensual o anual deseado.
-
-  
-
-- Se debe poder indicar cuanto de la meta se va cumpliendo y cuando se cumplió
-
-  
-
-  
-
-**Requerimientos no funcionales**
-
-  
-
-- El sistema debe ser seguro y cuidar los datos de los clientes.
-
-  
-
-- Debe ser compatible tanto con iOS como con Android.
-
-  
-
-- Debe poder ser publicado en Apple app store y en Google Play.
-
-  
-
-- Debe soportar tanto el idioma Español como Ingles.
-
+## Requerimientos no funcionales:
+**RNF1:** El sistema en su v1 deberá soportar 100 usuarios concurrentes.
+**RNF2:** El sistema en su v1 deberá funcionar en ios 14 y android 9.0. 
+**RNF3:** El sistema utilizará https como método de seguridad. 
+**RNF4:** El sistema utilizará SQRC como método de seguridad para los códigos QR.
+**RNF5:** El sistema en su v1 deberá tener como idioma el español e ingles.
 
 **Casos de Uso**
 
@@ -295,6 +286,29 @@ Cusro básico:
 <img src="elicitacion/especificacion/UI/ingreso.png" >
 <img src="elicitacion/especificacion/UI/gasto.png" >
 <img src="elicitacion/especificacion/UI/side-menu.png" >
+
+
+**Historias de Usuarios**
+
+### Historia usuario Martín
+Título: Quiero aprender a ahorrar.
+
+Cómo: Quiero poder medir mis ingesos y egresos y aprender a priorizar los gastos para llegar a mis objetivos de ahorro.
+
+Criterios de aceptación:
+	- Le muestra sus objetivos de ahorro y su grado de cumplimiento.
+	- Le da tips para ahorrar.
+	- Le permite ingresas de forma cómoda en pocos pasos sus gastos y clasificarlos.
+
+### Historia usuario Elizabeth
+Título: Controlar gastos con ingresos variables.
+
+Cómo: Quiero poder planificar mis gastos y tener cuenta de datos históricos, ya que mis ingresos son variables por comisión.
+
+Criterios de aceptación:
+	- Le permite agregar diferentes montos de ingreso cada mes
+	- Le permite fijar diferentes objetivos de ahorro mensuales.
+	- Le muestra un histórico de sus gastos.
 
 ## Validación y verificación
 

@@ -27,27 +27,28 @@ Una vez testeado los cambios, si todo está correcto, se hacer merge con main.
 
 **Comandos git a utilizar:**
 
-- git init
-	Para crear un nuevo repositorio
-- git clone 
-	Es utilizado para crear una copia del repositorio del lugar donde está, a la máquina en la que se está trabajando. Se pude clonar una rama especifica con -b + nombre de la rama, antes de la dirección del repositorio.
-- git commit
-	Es utilizado para guardar los cambios realizados en Git. 
-- git pull
-	Baja los cambios hechos del repositorio a la máquina local.
-- git push
-	Sube los cambios realizados al repositorio.
-- git merge
-- git branch
-	Es utilizado para listar las ramas existentes. Crear y eliminar ramas.
-- git checkout
-	Es utilizado para salir de una rama y entrar a otra. Asumiendo estas ramas ya existen.
-- git add 
-	Es utilizado para contrastar los cambios hechos de forma local, contra el repositorio. Los cambios no son guardados con git add. Para eso debe luego utilizarse git commit.
-- git diff
-	Es utilizado para identificar diferencias en el repositorio.
-- git stash
-	Es utilizado en caso se quiera guardar temporalmente cambios realizados. Esto permite pasar a otra tarea e impactar los cambios más tarde.
+* git init
+	* Para crear un nuevo repositorio
+* git clone 
+	* Es utilizado para crear una copia del repositorio del lugar donde está, a la máquina en la que se está trabajando. Se pude clonar una rama especifica con -b + nombre de la rama, antes de la dirección del repositorio.
+* git commit
+	* Es utilizado para guardar los cambios realizados en Git. 
+* git pull
+	* Baja los cambios hechos del repositorio remoto a la máquina local.
+* git push
+	* Sube los cambios realizados al repositorio.
+* git merge
+	*  Se utiliza para unir dos ramas.
+* git branch
+	* Es utilizado para listar las ramas existentes. Crear y eliminar ramas.
+* git checkout
+	* Es utilizado para salir de una rama y entrar a otra. Asumiendo estas ramas ya existen.
+* git add 
+	* Es utilizado para contrastar los cambios hechos de forma local, contra el repositorio. Los cambios no son guardados con git add. Para eso debe luego utilizarse git commit.
+* git diff
+	* Es utilizado para identificar diferencias en el repositorio.
+* git stash
+	* Es utilizado en caso se quiera guardar temporalmente cambios realizados. Esto permite pasar a otra tarea e impactar los cambios más tarde.
 
   
 
@@ -77,7 +78,7 @@ En caso de bugs, el nombre puede ser hotfix/nombre_de_rama
 
 ### Tormenta de ideas
 
-La primera técnica utilizada fue la **tormenta de ideas** [*Ver el [Anexo 1](#anexo-1)* ]. Debido a que es un software que apunta a un público en general, con las definiciones que se tienen en ese momento, y que todos los participantes en el desarrollo del proyecto tienen ingresos y ahorran, pueden desde su experiencia, aportar puntos de vista.
+La primera técnica utilizada fue la **tormenta de ideas** [*Ver el [Anexo](#anexo-1)* ]. Debido a que es un software que apunta a un público en general, con las definiciones que se tienen en ese momento, y que todos los participantes en el desarrollo del proyecto tienen ingresos y ahorran, pueden desde su experiencia, aportar puntos de vista.
 
 Se pusieron sobre la mesa los conceptos y funcionalidades basicas sobre el producto, en un ambiente relajado, dando rienda suelta a la creatividad previo a atarnos a requisitos que vendran luego en la elicitacion
 
@@ -104,7 +105,7 @@ Luego de ambas entrevistas logramos sacar las siguientes conclusiones:
 
 ### Ingeniería inversa
 
-Como tercer y ultima tenia de felicitación utilizamos la ingeniera inversa. En este caso analizamos en conjunto dos aplicaciones diferentes: **YNAB budget** y **CoinApp**.
+Como tercer y ultima tenia de felicitación utilizamos la ingeniera inversa. En este caso analizamos en conjunto dos aplicaciones diferentes: [**YNAB budget**](https://www.youneedabudget.com/) y [**CoinApp**](https://coinapp.com.uy/).
 Pudimos ver que ambas apuntan al mismo objetivo, pero a diferentes escalas entre  ellas.
 Por un lado, **CoinApp** apunta a un usuario mucho mas casual que desea llevar un registro de sus gastos pero no esta tan interesado en aprender a ahorrar mas profundamente. Por ello, las herramientas que ofrece son mucho mas simples.
 En cambio, cuando vemos **YNAB budget** podemos denotar un conjunto de herramientas mucho mas completa, teniendo también la principal ventaja de poseer integración con bancos locales.
@@ -153,7 +154,18 @@ A continuación se mostrara un desglose de las features mas importantes que pudi
 
 #### Evidencia
 
-Dentro 
+Dentro del anexo [Ingenieria Inversa](#ingenieria-inversa) se podran ver las capturas tomadas de ambas aplicaciones
+
+### User Persona
+
+Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas: 
+
+* Profesional universitario, buscando mejorar sus finanzas 
+* Primera experiencia laboral en busca de sus primeros ahorros
+
+![Elizabeth](elicitacion/user-persona/persona-elizabeth.png?raw=true  "Elizabeth")
+![Martin](elicitacion/user-persona/persona-martin.png?raw=true  "Martin")
+
 
 ## Especificación
 
@@ -219,7 +231,7 @@ Dentro
 
   
 
-## Validación y validación
+## Validación y verificación
 
   
 
@@ -247,4 +259,25 @@ test
 
 ### Elicitacion
 
+#### Tormenta de ideas
+
 ![Tormenta de ideas](elicitacion/tormenta-de-ideas/brainstorm.jpg?raw=true  "Tormenta de ideas")
+
+#### Ingenieria inversa
+
+<b>CoinApp</b>
+
+<img src="elicitacion/ingenieria-inversa/IMG_3464.png" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3465.png" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3466.png" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3467.png" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3468.png" width="200">
+
+</br>
+
+<b>YNAB budget</b>
+
+<img src="elicitacion/ingenieria-inversa/YNAB-1.jpeg" width="200">
+<img src="elicitacion/ingenieria-inversa/YNAB-2.jpeg" width="200">
+<img src="elicitacion/ingenieria-inversa/YNAB-3.jpeg" width="200">
+<img src="elicitacion/ingenieria-inversa/YNAB-4.jpeg" width="200">

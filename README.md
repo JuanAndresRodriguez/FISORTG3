@@ -95,8 +95,7 @@ Las personas entrevistadas representaban dos grupos: jovenes buscando comenzar s
 
 Luego de ambas entrevistas logramos sacar las siguientes conclusiones:
 
- 
--
+Considerando ambas entrevistas, lo primero que podemos notar es el fuerte rechazo a imputar datos dentro de jna aplicación, por parte de los entrevistados. Ambos ahorran pero sin embargo dan cifras redondas, por lo que no tienen un control exacto de lo que ahorran. Sumado a las variaciones en el nivel de ahorro de las que son concientes pero no pueden medir con exactitud, podemos aventurar que una aplicación del estilo, les va a ser útil, si es amigable para poder registrar los gastos. Las propuestas de poder registrar los montos mediante el QR de las facturas, y asignarle a cada gasto una etiqueta, cobran más sentido con estas entrevistas, ya que es una forma más dinámica de registrar los gastos, sin tené que imputar los números. Se puede evaluar más adelante para futuras versiones, tener una forma dinámica de obtener el detalle de la factura, como un segundo nivel de clasificación, en jerarquía, por debajo del etiquetado general que hace el usuario. Este dinamismo se puede lograr únicamente con el uso de un dispositivo móvil, el cuál cuenta ya con cámara para leer un QR y se le puede dar una interfaz amigable para que el usuario seleccione la etiqueta para categorizar el gasto.
 
  #### Evidencia
  Ambas entrevistas realizadas se pueden encontrar [aqui](elicitacion/entrevistas/entrevista-1.md) y [aqui](elicitacion/entrevistas/entrevista-2.md)

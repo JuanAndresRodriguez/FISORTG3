@@ -167,15 +167,6 @@ Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas:
 
 
 ## Especificación
-
-  
-
-  
-
-**Requerimientos funcionales**
-
-  
-
   
 ## Requerimientos funcionales
 #### El unico actor que tendremos va a ser el usuario

@@ -319,11 +319,9 @@ También se sugirió poder cambiar el tema oscuro que se utilizó a un tema de c
 |¿Tiene una prioridad?|Si|Si|Si|Si|Si|Si|
 |¿Se identifica claramente el origen?|Si|Si|Si|Si|Si|Si|
 
-## Reflexión
+# Reflexiones Individuales
 
-### Individuales
-
-Reflexión Juan Rodríguez.
+## Reflexión Juan Rodríguez.
 
 En cuanto al trabajo con el que colaboré, fue:
  - En la tormenta de ideas, el realizar una de las entrevistas y sacar conclusiones de ambas.
@@ -341,7 +339,7 @@ Estimar que quiere realmente el usuario me parece el desafío más grande de tod
 Incluso con la documentación y el prototipado pueden quedar diferencias entre las necesidades de los usuarios y el producto final, pero el uso de metodologías de ingeniería de software sirve claramente para acortar esas distancias.
 La participación de mis compañeros que trabajan estrictamente en desarrollo, a diferencia mía que tengo un background de analytics, me sirvió para ir más rápido y adaptarme a la forma de trabajo sin problemas.
 
-  ## Reflexión Guillermo Ramirez:
+## Reflexión Guillermo Ramirez:
 
 Este fue un proyecto interesante ya que no son cosas que como desarrollador normalmente hacemos, no tendemos a estar en la parte de la organización y la creación de un proyecto, por lo que todo esto es nuevo y muy util.
 
@@ -367,6 +365,10 @@ En mi caso, me siento muy cómodo al poder tener charlas distendidas en cuanto a
 Teniendo en eso en cuenta, este proyecto me dejo muy satisfecho gracias a que lo cumplió de gran manera. A la hora de trabajar con mis compañeros sentí que podia adquirir conocimiento en areas en las que no tengo experiencia.
 Pasando al punto de elicitacion, me encontré en un ambito totalmente nuevo para mi. Mi trabajo dia a dia es en una empresa de producto, por lo que no tengo contacto con clientes directamente. El hecho de tener que realizar una investigación antes del desarrollo abre la puerta a muchas mejoras, y la capacidad de prevenir errores.
 Siento que es un aprendizaje que me cambio la forma de pensar al enfrentarme a nuevas tareas dentro del campo del desarrollo de software.
+
+# Reflexión Global. 
+
+El trabajo nos sirvió para ver partes del proceso de Ingeniería de Software en las cuales no estamos totalmente involucrados en nuestras tareas habituales. Pudimos desempeñarnos bien como equipo e ir organizando los diferentes cambios que fuimos agregando a esta primera etapa previa al desarrollo. Nos dió sobre todo una visión más holística de esta primera etapa del proceso.
 
 ## Anexos
 

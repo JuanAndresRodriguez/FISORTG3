@@ -28,22 +28,26 @@ Una vez testeado los cambios, si todo está correcto, se hacer merge con main.
 **Comandos git a utilizar:**
 
 - git init
-
-- git clone
-
+	Para crear un nuevo repositorio
+- git clone 
+	Es utilizado para crear una copia del repositorio del lugar donde está, a la máquina en la que se está trabajando. Se pude clonar una rama especifica con -b + nombre de la rama, antes de la dirección del repositorio.
 - git commit
-
+	Es utilizado para guardar los cambios realizados en Git. 
 - git pull
-
+	Baja los cambios hechos del repositorio a la máquina local.
 - git push
-
+	Sube los cambios realizados al repositorio.
 - git merge
-
 - git branch
-
+	Es utilizado para listar las ramas existentes. Crear y eliminar ramas.
 - git checkout
-
-- git add
+	Es utilizado para salir de una rama y entrar a otra. Asumiendo estas ramas ya existen.
+- git add 
+	Es utilizado para contrastar los cambios hechos de forma local, contra el repositorio. Los cambios no son guardados con git add. Para eso debe luego utilizarse git commit.
+- git diff
+	Es utilizado para identificar diferencias en el repositorio.
+- git stash
+	Es utilizado en caso se quiera guardar temporalmente cambios realizados. Esto permite pasar a otra tarea e impactar los cambios más tarde.
 
   
 

@@ -167,6 +167,8 @@ Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas:
 
 ### Mapa preliminar de funcionalidades
 ![](esquema-funcionalidades.jpeg?raw=true  "Funcionalidades")
+![](elicitacion/UML.png?raw=true  "UML")
+
 
 
 ## Especificación

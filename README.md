@@ -96,8 +96,7 @@ Las personas entrevistadas representaban dos grupos: jovenes buscando comenzar s
 
 Luego de ambas entrevistas logramos sacar las siguientes conclusiones:
 
- 
--
+Considerando ambas entrevistas, lo primero que podemos notar es el fuerte rechazo a imputar datos dentro de jna aplicación, por parte de los entrevistados. Ambos ahorran pero sin embargo dan cifras redondas, por lo que no tienen un control exacto de lo que ahorran. Sumado a las variaciones en el nivel de ahorro de las que son concientes pero no pueden medir con exactitud, podemos aventurar que una aplicación del estilo, les va a ser útil, si es amigable para poder registrar los gastos. Las propuestas de poder registrar los montos mediante el QR de las facturas, y asignarle a cada gasto una etiqueta, cobran más sentido con estas entrevistas, ya que es una forma más dinámica de registrar los gastos, sin tené que imputar los números. Se puede evaluar más adelante para futuras versiones, tener una forma dinámica de obtener el detalle de la factura, como un segundo nivel de clasificación, en jerarquía, por debajo del etiquetado general que hace el usuario. Este dinamismo se puede lograr únicamente con el uso de un dispositivo móvil, el cuál cuenta ya con cámara para leer un QR y se le puede dar una interfaz amigable para que el usuario seleccione la etiqueta para categorizar el gasto.
 
  #### Evidencia
  Ambas entrevistas realizadas se pueden encontrar [aqui](elicitacion/entrevistas/entrevista-1.md) y [aqui](elicitacion/entrevistas/entrevista-2.md)
@@ -227,9 +226,56 @@ Luego de aplicar las tecnicas documentadas, identificamos dos tipos de personas:
 
 - Debe soportar tanto el idioma Español como Ingles.
 
-  
 
+**Casos de Uso**
+
+#### Ingreso de Una Factura por QR
+Actores: Usuario
+Precondición: El usuario ya realizó un gasto.
+Sinopsis: El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. La cámara se abre y saca una foto al QR. El monto es registrado y le pide asignarle una categoría.
+Curso básico:
+	1) (Usuario) Abre la aplicación
+	2) (Sistema) Muestra el menú de opciones
+	3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
+	4) (Sistema) Muestra intefaz para agregar gasto.
+	5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
+	6) (Usuario) Apreta el ícono del botón QR
+	7) (Sistema) Abre la cámara
+	8) (Usuario) Toma una foto al QR
+	9) (Sistema) Lee el QR y obtiene del mismo el monto de la factura. Vuelve al menú anterior.
+	10) (Usuario) Presiona Agregar
+	11) (Sistema) El gasto es registrado en el sistema.
+	
+Curso alternativo: Si el QR no se lee, da mensaje error al leer QR y vuelve al menú anterior. Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
+
+#### Ingreso de Una Factura por imputando el monto
+Actores: Usuario
+Precondición: El usuario ya realizó un gasto.
+Sinopsis: El usuario realizó un gasto, y desea registrarlo en la aplicación, para llevar la cuenta del mismo. Abre la aplicación. Elige ingresar nuevo gasto. El menú se abre y ofrece el campo para ingresar el monto de forma manual. El monto es registrado y le pide asignarle una categoría.
+Curso básico:
+	1) (Usuario) Abre la aplicación
+	2) (Sistema) Muestra el menú de opciones
+	3) (Usuario) Elije ingresar nuevo gasto con Agregar Gasto.
+	4) (Sistema) Muestra intefaz para agregar gasto.
+	5) (Usuario) Agrega nombre, moneda, y elige la categoría desde una lista desplegable.
+	6) (Usuario) Imputa el monto en el campo que ofrece el menú.
+	7) (Usuario) Presiona Agregar
+	8) (Sistema) El gasto es registrado en el sistema.
+	
+Curso alternativo: Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
   
+#### Poner Ingresos mensuales
+Actores: Usuario
+Precondición: El usuario cuenta con ingresos mensuales y conoce el monto.
+Sinopsis: El usuario quiere registrar sus ingresos en la aplicación.
+Cusro básico:
+	1) (Usuario) Abre la aplicación
+	2) (Sistema) Muestra el menú de opciones
+	3) (Usuario) Elije del menú Agregar Ingreso.
+	4) (Sistema) Muestra el menú de Agregar Ingreso
+	5) (Usuario) Completa el nombre del ingreso, el monto y la moneda. Además puede programarlo como ingreso mensual, o puede dejarlo solo como ingreso del mes corriente.
+	6) (Sistema) Registra el gasto.
+	
 
 ## Validación y verificación
 

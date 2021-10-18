@@ -275,7 +275,30 @@ Cusro básico:
 	4) (Sistema) Muestra el menú de Agregar Ingreso
 	5) (Usuario) Completa el nombre del ingreso, el monto y la moneda. Además puede programarlo como ingreso mensual, o puede dejarlo solo como ingreso del mes corriente.
 	6) (Sistema) Registra el gasto.
-	
+
+
+
+**Historias de Usuarios**
+
+### Historia usuario Martín
+Título: Quiero aprender a ahorrar.
+
+Cómo: Quiero poder medir mis ingesos y egresos y aprender a priorizar los gastos para llegar a mis objetivos de ahorro.
+
+Criterios de aceptación:
+	- Le muestra sus objetivos de ahorro y su grado de cumplimiento.
+	- Le da tips para ahorrar.
+	- Le permite ingresas de forma cómoda en pocos pasos sus gastos y clasificarlos.
+
+### Historia usuario Elizabeth
+Título: Controlar gastos con ingresos variables.
+
+Cómo: Quiero poder planificar mis gastos y tener cuenta de datos históricos, ya que mis ingresos son variables por comisión.
+
+Criterios de aceptación:
+	- Le permite agregar diferentes montos de ingreso cada mes
+	- Le permite fijar diferentes objetivos de ahorro mensuales.
+	- Le muestra un histórico de sus gastos.
 
 ## Validación y verificación
 

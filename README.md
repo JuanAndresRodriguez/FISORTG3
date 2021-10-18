@@ -245,7 +245,11 @@ Curso básico:
 	9) (Sistema) Lee el QR y obtiene del mismo el monto de la factura. Vuelve al menú anterior.
 	10) (Usuario) Presiona Agregar
 	11) (Sistema) El gasto es registrado en el sistema.
-	
+
+<img src="elicitacion/especificacion/UI/home.png" >
+<img src="elicitacion/especificacion/UI/home-add.png" >
+<img src="elicitacion/especificacion/UI/gasto.png" >
+
 Curso alternativo: Si el QR no se lee, da mensaje error al leer QR y vuelve al menú anterior. Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
 
 #### Ingreso de Una Factura por imputando el monto
@@ -262,6 +266,10 @@ Curso básico:
 	7) (Usuario) Presiona Agregar
 	8) (Sistema) El gasto es registrado en el sistema.
 	
+<img src="elicitacion/especificacion/UI/home.png" >
+<img src="elicitacion/especificacion/UI/home-add.png" >
+<img src="elicitacion/especificacion/UI/gasto.png" >
+
 Curso alternativo: Si falta completar un campo, un pop up avisa que es obligatorio y da opción de agregarlo.
   
 #### Poner Ingresos mensuales
@@ -275,7 +283,18 @@ Cusro básico:
 	4) (Sistema) Muestra el menú de Agregar Ingreso
 	5) (Usuario) Completa el nombre del ingreso, el monto y la moneda. Además puede programarlo como ingreso mensual, o puede dejarlo solo como ingreso del mes corriente.
 	6) (Sistema) Registra el gasto.
-	
+
+<img src="elicitacion/especificacion/UI/home.png" >
+<img src="elicitacion/especificacion/UI/home-add.png" >
+<img src="elicitacion/especificacion/UI/ingreso.png" >
+
+### Bocetos de UI
+
+<img src="elicitacion/especificacion/UI/home.png" >
+<img src="elicitacion/especificacion/UI/home-add.png" >
+<img src="elicitacion/especificacion/UI/ingreso.png" >
+<img src="elicitacion/especificacion/UI/gasto.png" >
+<img src="elicitacion/especificacion/UI/side-menu.png" >
 
 ## Validación y verificación
 
@@ -313,11 +332,11 @@ test
 
 <b>CoinApp</b>
 
-<img src="elicitacion/ingenieria-inversa/IMG_3464.png" width="200">
-<img src="elicitacion/ingenieria-inversa/IMG_3465.png" width="200">
-<img src="elicitacion/ingenieria-inversa/IMG_3466.png" width="200">
-<img src="elicitacion/ingenieria-inversa/IMG_3467.png" width="200">
-<img src="elicitacion/ingenieria-inversa/IMG_3468.png" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3464.PNG" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3465.PNG" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3466.PNG" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3467.PNG" width="200">
+<img src="elicitacion/ingenieria-inversa/IMG_3468.PNG" width="200">
 
 </br>
 

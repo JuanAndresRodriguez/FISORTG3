@@ -4,7 +4,7 @@ import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
 
 
-/** preloaded test info
+ //preloaded test info
 function logSaldo(balance){
     console.log("tu saldo actual es de: " + balance.balanceMoney);
 };
@@ -35,5 +35,5 @@ sortedHistory.forEach((element) => {
     li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
     ul[0].appendChild(li);
 })
-**/
+
 

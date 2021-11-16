@@ -25,5 +25,5 @@ class Balance {
   
 }
 
-export default Balance;
+module.exports = Balance;
   

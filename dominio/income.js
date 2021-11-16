@@ -19,5 +19,5 @@ class Income {
   
 }
 
-export default Income;
+module.exports = Income;
   

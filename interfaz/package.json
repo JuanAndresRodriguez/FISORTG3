@@ -8,8 +8,7 @@
     "watch": "webpack --watch",
     "build": "cross-env NODE_ENV=production webpack",
     "build-dev": "webpack",
-    "clean": "rm -rf ./dist",
-    "test": "jest"
+    "clean": "rm -rf ./dist"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",

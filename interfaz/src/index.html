@@ -5,11 +5,90 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="bundle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
+          
 <body>
-    <div>
-        <ul class="history"></ul>
+  <header class="mdc-top-app-bar app-bar" id="app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+        <span class="mdc-top-app-bar__title">Inicio</span>
+      </section>
     </div>
-
+  </header>
+  <aside class="mdc-drawer mdc-drawer--modal mdc-top-app-bar--fixed-adjust">
+    <div class="mdc-drawer__content">
+      <div class="mdc-deprecated-list">
+        <a class="mdc-deprecated-list-item mdc-list-item--activated" href="#">
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">home</i>
+          <span class="mdc-deprecated-list-item__text">Inicio</span>
+        </a>
+        <a class="mdc-deprecated-list-item" href="#" aria-current="page">
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">attach_money</i>
+          <span class="mdc-deprecated-list-item__text">Historial</span>
+        </a>
+        <a class="mdc-deprecated-list-item" href="#">
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">savings</i>
+          <span class="mdc-deprecated-list-item__text">Ahorros</span>
+        </a>
+        <a class="mdc-deprecated-list-item" href="#">
+          <span class="mdc-deprecated-list-item__ripple"></span>
+          <i class="material-icons mdc-deprecated-list-item__graphic" aria-hidden="true">school</i>
+          <span class="mdc-deprecated-list-item__text">Educacion</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <div class="mdc-drawer-scrim"></div>
+  <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+    <main class="main-content" id="main-content">
+      <div class="mdc-tab-bar" role="tablist">
+        <div class="mdc-tab-scroller">
+          <div class="mdc-tab-scroller__scroll-area">
+            <div class="mdc-tab-scroller__scroll-content">
+              <button class="mdc-tab mdc-tab--active" role="tab" aria-selected="true" tabindex="0">
+                <span class="mdc-tab__content">
+                  <span class="mdc-tab__icon material-icons" aria-hidden="true">trending_up</span>
+                  <span class="mdc-tab__text-label">Ingresos</span>
+                </span>
+                <span class="mdc-tab-indicator mdc-tab-indicator--active">
+                  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                </span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+              <button class="mdc-tab" role="tab" aria-selected="true" tabindex="0">
+                <span class="mdc-tab__content">
+                  <span class="mdc-tab__icon material-icons" aria-hidden="true">trending_down</span>
+                  <span class="mdc-tab__text-label">Gastos</span>
+                </span>
+                <span class="mdc-tab-indicator">
+                  <span class="mdc-tab-indicator__content mdc-tab-indicator__content--underline"></span>
+                </span>
+                <span class="mdc-tab__ripple"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <button class="mdc-fab expense" aria-label="Favorite">
+      <div class="mdc-fab__ripple"></div>
+      <span class="mdc-fab__icon material-icons">trending_down</span>
+    </button>
+    <button class="mdc-fab income" aria-label="Favorite">
+      <div class="mdc-fab__ripple"></div>
+      <span class="mdc-fab__icon material-icons">trending_up</span>
+    </button>
+    <button class="mdc-fab menu" aria-label="Favorite">
+      <div class="mdc-fab__ripple"></div>
+      <span class="mdc-fab__icon material-icons">add</span>
+    </button>
+  </div>
 </body>
+
 </html>

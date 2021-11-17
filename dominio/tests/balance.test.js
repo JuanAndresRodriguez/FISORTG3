@@ -2,9 +2,11 @@ const { TestWatcher } = require('@jest/core');
 const Balance = require('../balance');
 const Income = require('../income');
 const Expense = require('../expense');
+const data = require('./incomeList.json');
 
 let cuenta = new Balance();
 let sueldo = new Income("Sueldo",600,"2021-10-07","UYU",true);
+let sueldo2 = new Income("Sueldo2",40,"2021-10-07","UYU",true);
 let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
 
 test('add income to balance',() => {
@@ -21,4 +23,7 @@ test('check income array list',()=>{
 });
 test('check expense array list',()=>{
     expect(cuenta.expensesList.length).toBe(1)
+});
+test('check delete income from balance',() =>{
+    balance.
 });

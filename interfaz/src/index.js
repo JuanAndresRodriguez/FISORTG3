@@ -4,9 +4,6 @@ import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
 
 
-<<<<<<< HEAD
- //preloaded test info
-=======
 let cuenta = new Balance;
 let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
 let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
@@ -18,21 +15,14 @@ let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
 
 
 cuenta.addIncomeToBalance(sueldo);
-cuenta.addIncomeToBalance(sueldo2);
-console.log(cuenta.getIncomeList());
-cuenta.deleteIncomeFromList(sueldo3);
-console.log(cuenta.getIncomeList());
-cuenta.addExpenseToBalance(renner);
-cuenta.addExpenseToBalance(renner2);
-console.log(cuenta.getExpensesList());
-cuenta.deleteExpenseFromList(renner);
-console.log(cuenta.getExpensesList());
+console.log(cuenta.getIncomeList().length);
+cuenta.deleteIncomeFromList(sueldo2);
+console.log(cuenta.getIncomeList().length);
 
 
 // console.log(sueldo[1]);
 
 /** preloaded test info
->>>>>>> feature/delete_from_list
 function logSaldo(balance){
     console.log("tu saldo actual es de: " + balance.balanceMoney);
 };
@@ -63,5 +53,4 @@ sortedHistory.forEach((element) => {
     li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
     ul[0].appendChild(li);
 })
-
-
+**/

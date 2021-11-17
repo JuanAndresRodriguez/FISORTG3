@@ -38,16 +38,18 @@ class Balance {
             //iterate through the element
             Object.keys(elementToDelete).every(key => {
                 if(key == 'date'){
-                    if( Number(elementToDelete[key]) == Number(element[key]))
+                    if(elementToDelete[key].getTime() == element[key].getTime()){
                         return true;
+                    }
                     else{
                         shouldDelete = false;
-                            return false;
+                        return false;
                     }
                 }
                 else{
-                    if(elementToDelete[key] == element[key])
+                    if(elementToDelete[key] == element[key]){
                             return true
+                        }
                         else{
                             shouldDelete = false;
                             return false;
@@ -62,11 +64,5 @@ class Balance {
         }   
     }
 }
-
-<<<<<<< HEAD
 module.exports = Balance;
   
-=======
-
-export default Balance  
->>>>>>> feature/delete_from_list

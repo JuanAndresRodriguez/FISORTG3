@@ -2,7 +2,26 @@ import "./styles/index.scss"
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
+import Saving from "../../dominio/saving";
 
+
+let cuenta = new Balance;
+let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
+let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
+let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
+
+
+
+
+cuenta.addIncomeToBalance(sueldo);
+console.log(cuenta.getIncomeList().length);
+cuenta.deleteIncomeFromList(sueldo2);
+console.log(cuenta.getIncomeList().length);
+
+
+// console.log(sueldo[1]);
 
 /** preloaded test info
 function logSaldo(balance){
@@ -36,4 +55,3 @@ sortedHistory.forEach((element) => {
     ul[0].appendChild(li);
 })
 **/
-

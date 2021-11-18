@@ -15,4 +15,4 @@ class Saving {
 		};
 	}
 }
-export default Saving;
+module.exports = Saving;

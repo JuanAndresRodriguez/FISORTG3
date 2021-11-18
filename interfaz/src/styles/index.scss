@@ -42,6 +42,11 @@ body {
   &.menu {
     margin-bottom: 70px;
     z-index: 7;
+    &.close {
+      .mdc-fab__icon {
+        transform: rotate(-45deg);
+      }
+    }
   }
   &.income {
     margin-bottom: 70px;
@@ -124,4 +129,11 @@ body {
 }
 .mdc-tab-indicator--active > .mdc-tab-indicator__content--underline{
   border-color: variables.$on-primary;
+}
+#history .tab-content{
+  display: none;
+  color: white;
+  &.active {
+    display: block;
+  }
 }

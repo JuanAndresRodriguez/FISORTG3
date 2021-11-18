@@ -17,19 +17,27 @@ const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
 const drawer = MDCDrawer.attachTo(document.querySelector('.mdc-drawer'));
 const list = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
 list.wrapFocus = true;
+//list 
+const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
+
+// FAB 
+let fabButton = document.querySelector('.mdc-fab.menu')
+fabButton.addEventListener('click', (event) => {
+  openFabSpeedDial(event.taget);
+});
 
 //drawer toggle from app bar
 topAppBar.setScrollTarget(document.getElementById('main-content'));
 topAppBar.listen('MDCTopAppBar:nav', () => {
-  let iconContainer = topAppBarElement.getElementsByClassName('mdc-top-app-bar__navigation-icon')[0];
-  let icon = iconContainer.innerHTML;
-  iconContainer.innerHTML = (icon == 'menu') ? 'arrow_back' : 'menu';
-  drawer.open = !drawer.open;
+  changeMenuIcon();
 });
+
+
 //close drawer on element click
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
 listEl.addEventListener('click', (event) => {
+  changeMenuIcon();
   var target = event.target;
   drawer.open = false;
   let appTitle = document.getElementsByClassName('mdc-top-app-bar__title')[0];
@@ -38,21 +46,17 @@ listEl.addEventListener('click', (event) => {
   appTitle.innerHTML = target.querySelector('.mdc-deprecated-list-item__text').innerHTML;
 });
 
-//list 
-const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
 
 
-// FAB 
-let fabButton = document.querySelector('.mdc-fab.menu')
-fabButton.addEventListener('click', (event) => {
-  openFabSpeedDial(event.taget);
-});
+
+
 
 //TODO: REFACTOR THIS FUNCTION AS SOON AS POSSIBLE
 function openFabSpeedDial(fabButtonMenu){
   //slide up 3 more fab buttons
   // income, expenses, QR
   // onclick close
+  fabButton.classList.toggle('close')
   let income = document.querySelector('.mdc-fab.income');
   income.classList.toggle('fade-in');
   income.addEventListener('click', (event) => {
@@ -67,7 +71,21 @@ function openFabSpeedDial(fabButtonMenu){
   });
 }
 
+function changeMenuIcon(){
+  let iconContainer = topAppBarElement.getElementsByClassName('mdc-top-app-bar__navigation-icon')[0];
+  let icon = iconContainer.innerHTML;
+  iconContainer.innerHTML = (icon == 'menu') ? 'arrow_back' : 'menu';
+  drawer.open = !drawer.open;
+}
 
+let contentEls = document.querySelectorAll('#history .tab-content');
+tabBar.listen('MDCTabBar:activated', function(event) {
+  document.querySelector('.tab-content.active').classList.remove('active');
+  contentEls[event.detail.index].classList.add('active');
+
+
+
+});
 
 /** preloaded test info
 function logSaldo(balance){

@@ -10,6 +10,9 @@ class Balance {
 	getBalanceMoney() {
 		return this.balanceMoney;
 	}
+    getSavingMoney(){
+        return this.savingMoney;
+    }
     getExpensesList(){
         return this.expensesList;
     }
@@ -23,7 +26,6 @@ class Balance {
     addExpenseToBalance(expense) {
         this.expensesList.push(expense);
         this.balanceMoney -= expense.amount;
-        this.checkSavingBalance();
     }
     addIncomeToBalance(income) {
         this.incomeList.push(income);
@@ -32,11 +34,6 @@ class Balance {
     addSavingToList(saving){
         this.savingList.push(saving);
         this.savingMoney += saving.amount;
-    }
-    checkSavingBalance(){
-        let balanceWithSaving = this.balanceMoney - this.savingMoney;
-        if(balanceWithSaving < 0) alert('te pasaste de tus ahorros');
-        else if(balanceWithSaving < 500) alert('estas cerca de pasarte de los ahorrios')
     }
     deleteIncomeFromList(incomeToDelete){
         this.deleteAux(this.incomeList,incomeToDelete);

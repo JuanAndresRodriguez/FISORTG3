@@ -21,5 +21,5 @@ class Expense {
   
 }
 
-export default Expense;
+module.exports = Expense;
   

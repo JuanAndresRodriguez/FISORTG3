@@ -115,30 +115,6 @@ tabBar.listen('MDCTabBar:activated', function(event) {
 // let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
 // let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
 
-
-
-
-
-//preloaded test info
-function logSaldo(balance){
-    console.log("tu saldo actual es de: " + balance.balanceMoney);
-};
-
-let cuenta = new Balance();
-//logSaldo(cuenta);
-let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
-cuenta.addIncomeToBalance(sueldo.getIncome());
-//logSaldo(cuenta);
-let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner.getExpense());
-//logSaldo(cuenta);
-let web = new Income("Web",20000,"2021-10-08","UYU",true);
-cuenta.addIncomeToBalance(web.getIncome());
-//logSaldo(cuenta);
-let sub = new Expense("sub",180,"2021-10-07","UYU","Ropa",true);
-cuenta.addExpenseToBalance(sub.getExpense());
-//logSaldo(cuenta);
-
 let incomes = cuenta.getIncomeList();
 incomes.forEach((element) => {
   var ul = document.querySelector('#Historial #income ul');

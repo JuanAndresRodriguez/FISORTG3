@@ -1,5 +1,177 @@
+//local
 @use "variables";
+//modules
+@use "@material/ripple";
+@use '@material/button/mdc-button';
+@use '@material/button';
+@use "@material/top-app-bar";
+@use "@material/icon-button";
+@use "@material/top-app-bar/mdc-top-app-bar";
+@use "@material/icon-button/styles" as icon-styles;
+@use "@material/drawer";
+@use "@material/list";
+@use "@material/fab";
+@use "@material/tab-bar/mdc-tab-bar";
+@use "@material/tab-bar";
+@use "@material/tab-scroller/mdc-tab-scroller";
+@use "@material/tab-indicator/mdc-tab-indicator";
+@use "@material/tab-scroller";
+@use "@material/tab-indicator";
+@use "@material/tab/mdc-tab";
+@use "@material/tab";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/select/styles";
+@use '@material/select';
+@use "@material/checkbox";
+@use "@material/form-field";
+
+@include checkbox.core-styles;
+@include form-field.core-styles;
+@include fab.core-styles;
+@include drawer.core-styles;
+@include drawer.dismissible-core-styles;
+@include drawer.modal-core-styles;
+@include list.deprecated-core-styles;
+@include textfield.core-styles;
+
 
 body {
-    background-color: variables.$primary;
+    background-color: variables.$background-dark;
+    margin: 0;
+    font-family: variables.$fontFamily;
+    display: flex;
+    height: 100vh;
+}
+.mdc-fab {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 16px;
+  &.menu {
+    margin-bottom: 70px;
+    z-index: 7;
+    &.close {
+      .mdc-fab__icon {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &.income {
+    margin-bottom: 70px;
+    opacity: 0;
+    visibility: hidden;
+    @include fab.container-color(variables.$income);
+    @include fab.ink-color(black);
+    z-index: 6;
+    transition: opacity .2s, margin-bottom .2s ease-out, visibility .2s;
+      -webkit-transition: opacity .2s, margin-bottom .2s ease-out, visibility .2s;
+    &.fade-in{
+      visibility: visible;
+      margin-bottom: 220px;
+      opacity: 1;
+      
+    }
+  }
+  &.expense {
+    margin-bottom: 70px;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 6;
+    @include fab.container-color(variables.$expense);
+    @include fab.ink-color(black);
+    transition: opacity .2s, margin-bottom .2s ease-out, visibility .2s;
+      -webkit-transition: opacity .2s, margin-bottom .2s ease-out, visibility .2s;
+    &.fade-in{
+      visibility: visible;
+      margin-bottom: 145px;
+      opacity: 1;
+      
+    }
+  }
+  
+}
+
+
+.mdc-drawer-app-content {
+  flex: auto;
+  overflow: auto;
+  position: relative;
+}
+
+.main-content {
+  overflow: auto;
+  height: 100%;
+}
+
+.app-bar {
+  position: absolute;
+}
+.mdc-top-app-bar {
+  z-index: 7;
+}
+.mdc-drawer__content{
+  @include drawer.surface-fill-color(variables.$primary);
+  
+}
+.mdc-drawer {
+  border: none;
+}
+.mdc-drawer .mdc-deprecated-list-item.mdc-list-item--activated {
+  @include list.deprecated-item-primary-text-ink-color(variables.$on-primary);
+  @include list.deprecated-item-graphic-ink-color(variables.$on-primary)
+}
+.mdc-drawer .mdc-deprecated-list-item {
+  @include list.deprecated-item-primary-text-ink-color(rgba(variables.$on-primary, .7));
+  @include list.deprecated-item-graphic-ink-color(rgba(variables.$on-primary, .7))
+}
+.mdc-tab-bar {
+  background-color: variables.$primary;
+}
+.mdc-tab {
+  @include tab.text-label-color(rgba(variables.$on-primary, .7));
+  @include tab.icon-color(rgba(variables.$on-primary, .7));
+}
+.mdc-tab--active {
+  @include tab.active-text-label-color(variables.$on-primary);
+  @include tab.active-icon-color(variables.$on-primary);
+}
+.mdc-tab-indicator--active > .mdc-tab-indicator__content--underline{
+  border-color: variables.$on-primary;
+}
+#Historial .tab-content{
+  display: none;
+  color: white;
+  &.active {
+    display: block;
+  }
+}
+section.full-screen {
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+section#Ingreso {
+  display: flex;
+  justify-content: center;
+  .form-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 30px;
+    .mdc-checkbox {
+      @include checkbox.container-colors(white, '', variables.$secondary, variables.$secondary, '');
+    }
+    .mdc-form-field {
+      label {color: white;}
+    }
+  }
+
 }

@@ -2,6 +2,7 @@ import "./styles/index.scss"
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
+import Saving from "../../dominio/saving";
 
 
 let cuenta = new Balance;

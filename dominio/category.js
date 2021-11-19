@@ -1,20 +1,23 @@
-import Expense from "./expense";
-
-class Category extends Expense {
-    constructor(catName, color, cantElem){
-        super(name);
-        super(amount);
-        super(date);
-        super(currency);
-        super(category);
-        super(isMonthly);
+class Category {
+    constructor(catName, catType, catFreq, color, cantElem){
+       
         this.catName = catName;
+        this.catType = catType;
+        this.catFreq = catFreq;
         this.color = color;
         this.cantElem = cantElem;
     }
 
     getCategoryName(){
         return this.catName;
+    }
+
+    getCategoryType(){
+        return this.catType;
+    }
+
+    getCategoryFrequency(){
+        return this.catFreq;
     }
 
     getCategoryColor(){
@@ -29,6 +32,14 @@ class Category extends Expense {
         this.catName = x;
     }
 
+    setCatType(x){
+        this.catType = x;
+    }
+
+    setCatFreq(x){
+        this.catType = x;
+    }
+
     setColor(x){
         this.color = x;
     }
@@ -38,3 +49,7 @@ class Category extends Expense {
     }
 
 }
+
+
+
+module.exports = Category;

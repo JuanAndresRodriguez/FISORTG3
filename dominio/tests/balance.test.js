@@ -28,12 +28,13 @@ test('check expense array list',()=>{
     expect(cuenta.getExpensesList().length).toBe(1)
 });
 //delete income tests
-test('check delete wront income from balance',() =>{
-    cuenta.deleteIncomeFromList(sueldo2.getIncome());
+
+test('check delete wrong income from balance',() =>{
+    cuenta.deleteIncomeFromList(sueldo2);
     expect(cuenta.getIncomeList().length).toBe(1);
 });
-test('check delete wront income by date from balance',() =>{
-    cuenta.deleteIncomeFromList(sueldo3.getIncome());
+test('check delete wrong income by date from balance',() =>{
+    cuenta.deleteIncomeFromList(sueldo3);
     expect(cuenta.getIncomeList().length).toBe(1);
 });
 test('check delete correct income from balance',() =>{

@@ -10,6 +10,7 @@ let sueldo3 = new Income("Sueldo",600,"2021-10-09","UYU",true);
 let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
 let renner2 = new Expense("renner2",30,"2021-10-09","UYU","Ropa",true);
 
+
 //check balance money
 test('add income to balance',() => {
     cuenta.addIncomeToBalance(sueldo.getIncome());
@@ -26,27 +27,29 @@ test('check income array list',()=>{
 test('check expense array list',()=>{
     expect(cuenta.getExpensesList().length).toBe(1)
 });
-
-
 //delete income tests
 test('check delete wront income from balance',() =>{
-    cuenta.deleteIncomeFromList(sueldo2);
+    cuenta.deleteIncomeFromList(sueldo2.getIncome());
     expect(cuenta.getIncomeList().length).toBe(1);
 });
 test('check delete wront income by date from balance',() =>{
-    cuenta.deleteIncomeFromList(sueldo3);
+    cuenta.deleteIncomeFromList(sueldo3.getIncome());
     expect(cuenta.getIncomeList().length).toBe(1);
 });
 test('check delete correct income from balance',() =>{
-    cuenta.deleteIncomeFromList(sueldo);
+    cuenta.deleteIncomeFromList(sueldo.getIncome());
     expect(cuenta.getIncomeList().length).toBe(0);
 });
 //delete expense tests
 test('check delete wrong expense from balance',() =>{
-    cuenta.deleteExpenseFromList(renner2);
+    cuenta.deleteExpenseFromList(renner2.getExpense());
     expect(cuenta.getExpensesList().length).toBe(1);
 });
 test('check delete correct expense from balance',() =>{
-    cuenta.deleteExpenseFromList(renner);
+    cuenta.deleteExpenseFromList(renner.getExpense());
     expect(cuenta.getExpensesList().length).toBe(0);
 });
+
+
+
+

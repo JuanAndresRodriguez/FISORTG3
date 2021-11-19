@@ -16,8 +16,6 @@ import {MDCCheckbox} from '@material/checkbox';
 let cuenta = new Balance;
 
 
-cleanupCron(cuenta);
-
 const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
 const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
 formField.input = checkbox;
@@ -114,11 +112,15 @@ tabBar.listen('MDCTabBar:activated', function(event) {
 
 });
 
-// let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
-// let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-// let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-// let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-// let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
+let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
+let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
+let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
+cuenta.addIncomeToBalance(sueldo);
+console.log(cuenta.getBalanceMoney());
+cuenta.deleteIncomeFromList(sueldo);
+console.log(cuenta.getBalanceMoney());
 
 let incomes = cuenta.getIncomeList();
 incomes.forEach((element) => {

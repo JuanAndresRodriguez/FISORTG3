@@ -37,11 +37,11 @@ class Balance {
     }
     deleteIncomeFromList(incomeToDelete){
         this.deleteAux(this.incomeList,incomeToDelete);
-        this.balanceMoney -= incomeToDelete.balanceMoney;
+        this.balanceMoney -= incomeToDelete.amount;
     }
     deleteExpenseFromList(expenseToDelete){
         this.deleteAux(this.expensesList,expenseToDelete);
-        this.balanceMoney += expenseToDelete.balanceMoney;
+        this.balanceMoney += expenseToDelete.amount;
 
     }
     deleteSavingFromList(savingToDelete){

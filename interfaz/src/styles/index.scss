@@ -1,13 +1,13 @@
+//local
 @use "variables";
-
-
+//modules
 @use "@material/ripple";
 @use '@material/button/mdc-button';
 @use '@material/button';
 @use "@material/top-app-bar";
 @use "@material/icon-button";
 @use "@material/top-app-bar/mdc-top-app-bar";
-@use "@material/icon-button/styles";
+@use "@material/icon-button/styles" as icon-styles;
 @use "@material/drawer";
 @use "@material/list";
 @use "@material/fab";
@@ -19,12 +19,26 @@
 @use "@material/tab-indicator";
 @use "@material/tab/mdc-tab";
 @use "@material/tab";
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+@use "@material/list/mdc-list";
+@use "@material/menu-surface/mdc-menu-surface";
+@use "@material/menu/mdc-menu";
+@use "@material/select/styles";
+@use '@material/select';
+@use "@material/checkbox";
+@use "@material/form-field";
 
+@include checkbox.core-styles;
+@include form-field.core-styles;
 @include fab.core-styles;
 @include drawer.core-styles;
 @include drawer.dismissible-core-styles;
 @include drawer.modal-core-styles;
 @include list.deprecated-core-styles;
+@include textfield.core-styles;
 
 
 body {
@@ -130,10 +144,34 @@ body {
 .mdc-tab-indicator--active > .mdc-tab-indicator__content--underline{
   border-color: variables.$on-primary;
 }
-#history .tab-content{
+#Historial .tab-content{
   display: none;
   color: white;
   &.active {
     display: block;
   }
+}
+section.full-screen {
+  display: none;
+  &.active{
+    display: block;
+  }
+}
+section#Ingreso {
+  display: flex;
+  justify-content: center;
+  .form-container{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 30px;
+    .mdc-checkbox {
+      @include checkbox.container-colors(white, '', variables.$secondary, variables.$secondary, '');
+    }
+    .mdc-form-field {
+      label {color: white;}
+    }
+  }
+
 }

@@ -37,12 +37,16 @@ class Balance {
     }
     deleteIncomeFromList(incomeToDelete){
         this.deleteAux(this.incomeList,incomeToDelete);
+        this.balanceMoney -= incomeToDelete.balanceMoney;
     }
     deleteExpenseFromList(expenseToDelete){
         this.deleteAux(this.expensesList,expenseToDelete);
+        this.balanceMoney += expenseToDelete.balanceMoney;
+
     }
     deleteSavingFromList(savingToDelete){
         this.deleteAux(this.savingList,savingToDelete);
+        this.savingMoney -= savingToDelete.amount;
     }
     deleteAux(list,elementToDelete){
         //iterate through the list
@@ -79,31 +83,6 @@ class Balance {
             }
         }   
     }
-    monthlyCleanup(){
-        this.objectCleanup(this.getExpensesList(),'expense');
-        this.objectCleanup(this.getSavingList(),'saving');
-        this.objectCleanup(this.getIncomeList(),'income');
-
-    }
-    objectCleanup(list,type){
-        
-        for(let i = list.length-1; i >= 0; i--){
-            let today = new Date();
-            let element = list[i];
-            if(element.date.getMonth() != today.getMonth() && !element.isMonthly){
-                switch(type){
-                    case 'expense' :
-                        this.deleteExpenseFromList(element);
-                    case 'saving' : 
-                        this.deleteSavingFromList(element);
-                    case 'income' : 
-                        this.deleteIncomeFromList(element);
-                }
-
-            }
-        }
-    }
-
 }
 module.exports = Balance;
   

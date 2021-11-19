@@ -4,8 +4,10 @@ const Expense = require('../expense');
 const Saving = require('../saving');
 
 let cuenta = new Balance();
-let saving = new Saving("saving",30,"2021-10-09","UYU",true);
-let saving2 = new Saving("saving2",30,"2021-10-09","UYU",true);
+let saving = new Saving("saving",30,"2021-10-09","UYU",false);
+let saving2 = new Saving("saving2",30,"2021-11-09","UYU",true);
+let saving3 = new Saving("saving",30,"2021-10-09","UYU",true);
+
 
 //saving tests
 test('check add saving',()=>{
@@ -18,4 +20,10 @@ test('check saving balance',()=>{
 test('delete wrong saving from balance',()=>{
     cuenta.deleteSavingFromList(saving2);
     expect(cuenta.getSavingList().length).toBe(1);
+});
+test('monthly cleanup of savings',() =>{
+    cuenta.addSavingToList(saving2);
+    cuenta.addSavingToList(saving3);
+    cuenta.monthlyCleanup()
+    expect(cuenta.getSavingList().length).toBe(2);
 });

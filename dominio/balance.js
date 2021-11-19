@@ -79,6 +79,31 @@ class Balance {
             }
         }   
     }
+    monthlyCleanup(){
+        this.objectCleanup(this.getExpensesList(),'expense');
+        this.objectCleanup(this.getSavingList(),'saving');
+        this.objectCleanup(this.getIncomeList(),'income');
+
+    }
+    objectCleanup(list,type){
+        
+        for(let i = list.length-1; i >= 0; i--){
+            let today = new Date();
+            let element = list[i];
+            if(element.date.getMonth() != today.getMonth() && !element.isMonthly){
+                switch(type){
+                    case 'expense' :
+                        this.deleteExpenseFromList(element);
+                    case 'saving' : 
+                        this.deleteSavingFromList(element);
+                    case 'income' : 
+                        this.deleteIncomeFromList(element);
+                }
+
+            }
+        }
+    }
+
 }
 module.exports = Balance;
   

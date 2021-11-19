@@ -1,9 +1,8 @@
 class Category {
-    constructor(catName, catType, catFreq, color, cantElem){
+    constructor(catName, catType, color, cantElem){
        
         this.catName = catName;
         this.catType = catType;
-        this.catFreq = catFreq;
         this.color = color;
         this.cantElem = cantElem;
     }
@@ -16,9 +15,7 @@ class Category {
         return this.catType;
     }
 
-    getCategoryFrequency(){
-        return this.catFreq;
-    }
+
 
     getCategoryColor(){
         return this.color;
@@ -28,26 +25,9 @@ class Category {
         return this.cantElem;
     }
 
-    setCatName(x){
-        this.catName = x;
+    sumarCantidad(){
+        this.cantElem += 1;
     }
-
-    setCatType(x){
-        this.catType = x;
-    }
-
-    setCatFreq(x){
-        this.catType = x;
-    }
-
-    setColor(x){
-        this.color = x;
-    }
-
-    setCantElem(x){
-        this.cantElem = x;
-    }
-
 }
 
 

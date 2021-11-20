@@ -4,11 +4,48 @@ const Income = require('../income');
 const Expense = require('../expense');
 
 let cuenta = new Balance();
-let sueldo = new Income("Sueldo",600,"2021-10-07","UYU",true);
-let sueldo2 = new Income("Sueldo2",40,"2021-10-07","UYU",true);
-let sueldo3 = new Income("Sueldo",600,"2021-10-09","UYU",true);
-let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-let renner2 = new Expense("renner2",30,"2021-10-09","UYU","Ropa",true);
+let dataSueldo ={
+    'name': 'Sueldo',
+    'amount': 600,
+    'date' : '2021-10-07',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let dataSueldo2 ={
+    'name': 'Sueldo2',
+    'amount': 40,
+    'date' : '2021-10-07',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let dataSueldo3 ={
+    'name': 'Sueldo',
+    'amount': 600,
+    'date' : '2021-10-09',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let dataExpense ={
+    'name': 'renner',
+    'amount': 200,
+    'date' : '2021-10-09',
+    'cateogry' : 'Ropa',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let dataExpense2 ={
+    'name': 'renner2',
+    'amount': 30,
+    'date' : '2021-10-09',
+    'cateogry' : 'Ropa',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let sueldo = new Income(dataSueldo);
+let sueldo2 = new Income(dataSueldo2);
+let sueldo3 = new Income(dataSueldo3);
+let renner = new Expense(dataExpense);
+let renner2 = new Expense(dataExpense2);
 
 
 //check balance money

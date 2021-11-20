@@ -4,8 +4,22 @@ const Expense = require('../expense');
 const Saving = require('../saving');
 
 let cuenta = new Balance();
-let saving = new Saving("saving",30,"2021-10-09","UYU",true);
-let saving2 = new Saving("saving2",30,"2021-10-09","UYU",true);
+let dataSaving ={
+    'name': 'saving',
+    'amount': 30,
+    'date' : '2021-10-09',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let dataSaving2 ={
+    'name': 'saving2',
+    'amount': 30,
+    'date' : '2021-10-09',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let saving = new Saving(dataSaving);
+let saving2 = new Saving(dataSaving2);
 
 //saving tests
 test('check add saving',()=>{

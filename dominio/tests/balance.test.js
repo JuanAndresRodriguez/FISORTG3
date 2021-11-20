@@ -2,14 +2,19 @@ const { TestWatcher } = require('@jest/core');
 const Balance = require('../balance');
 const Income = require('../income');
 const Expense = require('../expense');
+const Saving = require('../saving');
+
 
 let cuenta = new Balance();
-let sueldo = new Income("Sueldo",600,"2021-10-07","UYU",true);
-let sueldo2 = new Income("Sueldo2",40,"2021-10-07","UYU",true);
-let sueldo3 = new Income("Sueldo",600,"2021-10-09","UYU",true);
-let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-let renner2 = new Expense("renner2",30,"2021-10-09","UYU","Ropa",true);
-
+let sueldo = new Income("Sueldo",600,"2021-10-07","UYU",false);
+let sueldo2 = new Income("Sueldo2",40,"2021-10-07","UYU",false);
+let sueldo3 = new Income("Sueldo",600,"2021-10-09","UYU",false);
+let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",false);
+let renner2 = new Expense("renner2",30,"2021-10-09","UYU","Ropa",false);
+let saving = new Saving("saving",30,"2021-10-09","UYU",false);
+let saving2 = new Saving("saving2",30,"2021-10-09","UYU",true);
+cuenta.addSavingToList(saving);
+cuenta.addSavingToList(saving2);
 
 //check balance money
 test('add income to balance',() => {
@@ -49,6 +54,12 @@ test('check delete wrong expense from balance',() =>{
 test('check delete correct expense from balance',() =>{
     cuenta.deleteExpenseFromList(renner.getExpense());
     expect(cuenta.getExpensesList().length).toBe(0);
+});
+test('check monthly cleanup',()=> {
+    cuenta.addExpenseToBalance(renner2);
+    cuenta.monthlyCleanup()
+    expect(cuenta.getExpensesList().length).toBe(0);
+    expect(cuenta.getIncomeList().length).toBe(0);
 });
 
 

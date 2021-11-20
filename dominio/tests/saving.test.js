@@ -21,9 +21,3 @@ test('delete wrong saving from balance',()=>{
     cuenta.deleteSavingFromList(saving2);
     expect(cuenta.getSavingList().length).toBe(1);
 });
-test('monthly cleanup of savings',() =>{
-    cuenta.addSavingToList(saving2);
-    cuenta.addSavingToList(saving3);
-    cuenta.monthlyCleanup()
-    expect(cuenta.getSavingList().length).toBe(2);
-});

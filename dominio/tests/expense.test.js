@@ -12,7 +12,7 @@ let gasto = new expense(dataExpense);
 test('check creation of income',()=>{
     expect(gasto.name).toBe('renner');
     expect(gasto.amount).toBe(200);
-    expect(gasto.date.getTime()).toBe(new Date('2021-10-09').getTime());
+    expect(gasto.date.toDateString()).toBe(new Date('2021-10-09').toDateString());
     expect(gasto.currency).toBe('UYU');
     expect(gasto.category).toBe('Ropa')
     expect(gasto.isMonthly).toBe(true);

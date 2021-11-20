@@ -54,7 +54,7 @@ class Balance {
             //iterate through the element
             Object.keys(elementToDelete).every(key => {
                 if(key == 'date'){
-                    if(elementToDelete[key].getTime() == element[key].getTime()){
+                    if(elementToDelete[key].toDateString() == element[key].toDateString()){
                         return true;
                     }
                     else{

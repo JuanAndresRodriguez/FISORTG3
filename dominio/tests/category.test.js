@@ -16,6 +16,6 @@ test("obtener nombre de categoría", () => {
     expect(ute.cantElem).toBe(1);
 });
 test("setear nombre de categoría", () => {
-    ute.sumarCantidad();
+    ute.addQuantity();
     expect(ute.cantElem).toBe(2);
 });

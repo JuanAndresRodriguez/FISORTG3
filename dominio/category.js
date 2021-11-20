@@ -7,7 +7,7 @@ class Category {
         this.cantElem = dataArray['cantElem'];
     }
 
-    sumarCantidad(){
+    addQuantity(){
         this.cantElem += 1;
     }
 }

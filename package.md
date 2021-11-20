@@ -12,7 +12,8 @@ testWindows Se utiliza para poder testar en sistemas operativos Windows con Jest
 
 ### Dependencias 
 
-Jest 26.6.3
+Jest 26.6.3 Para realizar tests unitarios
+Eslint 7.28.0 Para el análisis estático del código.
 
 ## Interfaz
 Nombre: Interfaz

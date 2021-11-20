@@ -1,28 +1,10 @@
 class Category {
-    constructor(catName, catType, color, cantElem){
+    constructor(dataArray){
        
-        this.catName = catName;
-        this.catType = catType;
-        this.color = color;
-        this.cantElem = cantElem;
-    }
-
-    getCategoryName(){
-        return this.catName;
-    }
-
-    getCategoryType(){
-        return this.catType;
-    }
-
-
-
-    getCategoryColor(){
-        return this.color;
-    }
-
-    getCategoryCantElem(){
-        return this.cantElem;
+        this.name = dataArray['name'];
+        this.type = dataArray['type'];
+        this.color = dataArray['color'];
+        this.cantElem = dataArray['cantElem'];
     }
 
     sumarCantidad(){

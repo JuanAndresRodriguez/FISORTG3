@@ -1,23 +1,17 @@
-const Balance = require('../balance');
-const Income = require('../income');
-const Expense = require('../expense');
 const Saving = require('../saving');
 
-let cuenta = new Balance();
-let saving = new Saving("saving",30,"2021-10-09","UYU",false);
-let saving2 = new Saving("saving2",30,"2021-11-09","UYU",true);
-let saving3 = new Saving("saving",30,"2021-10-09","UYU",true);
-
-
-//saving tests
-test('check add saving',()=>{
-    cuenta.addSavingToList(saving.getSaving());
-    expect(cuenta.getSavingList().length).toBe(1);
-});
-test('check saving balance',()=>{
-    expect(cuenta.getSavingMoney()).toBe(30);
-});
-test('delete wrong saving from balance',()=>{
-    cuenta.deleteSavingFromList(saving2);
-    expect(cuenta.getSavingList().length).toBe(1);
-});
+let dataSaving ={
+    'name': 'saving',
+    'amount': 30,
+    'date' : '2021-10-09',
+    'currency' : 'UYU',
+    'monthly' : true
+};
+let saving = new Saving(dataSaving);
+test('check creation of saving',()=>{
+    expect(saving.name).toBe('saving');
+    expect(saving.amount).toBe(30);
+    expect(saving.date.getDate()).toBe(new Date('2021-10-09').getDate());
+    expect(saving.currency).toBe('UYU');
+    expect(saving.isMonthly).toBe(true);
+})

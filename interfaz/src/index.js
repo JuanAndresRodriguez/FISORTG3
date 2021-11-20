@@ -112,16 +112,6 @@ tabBar.listen('MDCTabBar:activated', function(event) {
 
 });
 
-let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
-let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
-cuenta.addIncomeToBalance(sueldo);
-console.log(cuenta.getBalanceMoney());
-cuenta.deleteIncomeFromList(sueldo);
-console.log(cuenta.getBalanceMoney());
-
 let incomes = cuenta.getIncomeList();
 incomes.forEach((element) => {
   var ul = document.querySelector('#Historial #income ul');
@@ -137,6 +127,7 @@ expenses.forEach((element) => {
   li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
   ul.appendChild(li);
 })
+
 
 // let history = cuenta.getIncomeList().concat(cuenta.getExpensesList());
 // let sortedHistory = history.sort((a,b) => a.date - b.date);

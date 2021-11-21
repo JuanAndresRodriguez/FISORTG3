@@ -2,6 +2,7 @@ import "./styles/index.scss";
 import { changeVisibleSection, openFabSpeedDial, changeMenuIcon, addEventBalanceButtons,
   updateHistory, changeAppTitle, cleanInput, getExpenseData, getIncomeData, displayBalance, updateTotalExpenses, setTestData} from './utils';
 import { setData, myChart } from "./chart";
+import cleanupCron from "./cron";
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
@@ -15,6 +16,8 @@ import {MDCTextField} from '@material/textfield';
 import {MDCSelect} from '@material/select';
 import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
+let cuenta = new Balance;
+
 
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const checkboxIncome = new MDCCheckbox(document.querySelector('.mdc-checkbox#income'));
@@ -100,7 +103,4 @@ setData(cuenta.getExpensesList());
 updateTotalExpenses(cuenta.getExpensesList());
 displayBalance(cuenta);
 updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList())
-
-
-
 

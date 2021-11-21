@@ -1,11 +1,12 @@
 class Expense {
-	constructor(name, amount, date, currency, category, isMonthly) {
-		this.name = name;
-        this.amount = amount;
-        this.date = new Date(date);
-        this.currency = currency;
-        this.category = category;
-        this.isMonthly = isMonthly;
+
+	constructor(dataArray) {
+		this.name = dataArray['name'];
+        this.amount = dataArray['amount'];
+        this.date = new Date(dataArray['date']);
+        this.currency = dataArray['currency'];
+        this.category = dataArray['category'];
+        this.isMonthly = dataArray['monthly'];
         this.type = 'Expense';
 	}
 

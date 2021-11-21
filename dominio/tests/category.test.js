@@ -1,28 +1,21 @@
 
 const Category = require('../category');
 
-let ute = new Category("luz", "egreso", "rojo", 1);
+let categoryData = {
+    'name' : 'luz',
+    'type' : 'egreso',
+    'color' : 'rojo',
+    'cantElem' : 1
+};
+let ute = new Category(categoryData);
 
 test("obtener nombre de categoría", () => {
-    expect(ute.getCategoryName()).toBe("luz");
+    expect(ute.name).toBe("luz");
+    expect(ute.type).toBe("egreso");
+    expect(ute.color).toBe("rojo");
+    expect(ute.cantElem).toBe(1);
 });
-
-
-
-test("obtener tipó del categoría", () => {
-    expect(ute.getCategoryType()).toBe("egreso");
-});
-
-test("obtener color de categoría", () => {
-    expect(ute.getCategoryColor()).toBe("rojo");
-});
-
-test("obtener cantidad elementos de categoría", () => {
-    expect(ute.getCategoryCantElem()).toBe(1);
-});
-
-
 test("setear nombre de categoría", () => {
-    ute.sumarCantidad();
-    expect(ute.getCategoryCantElem()).toBe(2);
+    ute.addQuantity();
+    expect(ute.cantElem).toBe(2);
 });

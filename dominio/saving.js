@@ -1,15 +1,16 @@
 class Saving {
-    constructor(name, amount,date, currency, isMonthly){
-        this.name = name;
-        this.amount = amount;
-        this.date = date;
-        this.currency = currency;
-        this.isMonthly = isMonthly;
+    constructor(dataArray){
+        this.name = dataArray['name'];
+        this.amount = dataArray['amount'];
+        this.date = new Date(dataArray['date']);
+        this.currency = dataArray['currency'];
+        this.isMonthly = dataArray['monthly'];
     }
     getSaving() {
 		return {
 		name: this.name,
         amount: this.amount,
+        date: this.date,
         currency: this.currency,
         isMonthly: this.isMonthly,
 		};

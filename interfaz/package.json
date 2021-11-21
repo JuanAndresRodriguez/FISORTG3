@@ -46,6 +46,7 @@
     "@material/textfield": "^13.0.0",
     "@material/top-app-bar": "^13.0.0",
     "chart.js": "^3.6.0",
+    "cron": "^1.8.2",
     "material-components-web": "^13.0.0"
   }
 }

@@ -1,17 +1,17 @@
 @use "@material/theme" with (
   $primary: #512da8,
   $secondary: #00796b,
-  $background: #fff,
+  $background: #121212,
   $on-primary: #fff,
   $on-secondary: #fff
 );
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
 
 $fontFamily : 'Roboto Slab', serif;
 
 // Colors
-$background-dark: #33167A;
+$background-dark: #121212;
 $primary: #512da8;
 $secondary: #00796b;
 $background: #fff;

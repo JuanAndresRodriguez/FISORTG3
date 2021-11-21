@@ -5,6 +5,7 @@ class Income {
         this.date = new Date(dataArray['date']);
         this.currency = dataArray['currency'];
         this.isMonthly = dataArray['monthly'];
+        this.type = 'Income';
 	}
 
 	getIncome() {

@@ -1,4 +1,5 @@
 class Expense {
+
 	constructor(dataArray) {
 		this.name = dataArray['name'];
         this.amount = dataArray['amount'];
@@ -6,6 +7,7 @@ class Expense {
         this.currency = dataArray['currency'];
         this.category = dataArray['category'];
         this.isMonthly = dataArray['monthly'];
+        this.type = 'Expense';
 	}
 
 	getExpense() {

@@ -56,7 +56,7 @@ export const myChart = new Chart(ctx, {
         let sorted = getSortedTransactionsByTime(expenses);
         let balance = 0;
         sorted.forEach((element) => {
-            if (element.constructor.name == "Expense"){
+            if (element.type == "Expense"){
                 balance += element.amount; 
                 points[counter] = balance;
                 labels[counter] = counter;

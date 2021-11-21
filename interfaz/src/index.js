@@ -1,6 +1,6 @@
-import "./styles/index.scss"
+import "./styles/index.scss";
 import { changeVisibleSection, openFabSpeedDial, changeMenuIcon, addEventBalanceButtons,
-  updateHistory, changeAppTitle, cleanInput, getExpenseData, getIncomeData, displayBalance, updateTotalExpenses} from './utils';
+  updateHistory, changeAppTitle, cleanInput, getExpenseData, getIncomeData, displayBalance, updateTotalExpenses, setTestData} from './utils';
 import { setData, myChart } from "./chart";
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
@@ -54,6 +54,7 @@ const mainContentEl = document.querySelector('.main-content');
 listEl.addEventListener('click', (event) => {
   updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
   changeMenuIcon(topAppBarElement,drawer);
+  displayBalance(cuenta)
   var target = event.target;
   drawer.open = false;
   let appTitle = document.getElementsByClassName('mdc-top-app-bar__title')[0];
@@ -64,32 +65,7 @@ listEl.addEventListener('click', (event) => {
 });
 
 // test data
-let cuenta = new Balance;
-let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
-cuenta.addIncomeToBalance(sueldo);
-let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-cuenta.addIncomeToBalance(sueldo2);
-let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-cuenta.addIncomeToBalance(sueldo3);
-let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner);
-let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner2);
-let renner3 = new Expense("renner3",2000,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner3);
-let renner4 = new Expense("renner4",3200,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner4);
-let renner5 = new Expense("renner5",200,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner5);
-let renner6 = new Expense("renner6",800,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner6);
-let renner7 = new Expense("renner7",900,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner7);
-let renner8 = new Expense("renner8",1200,"2021-10-09","UYU","Ropa",true);
-cuenta.addExpenseToBalance(renner8);
-
-
-
+let cuenta = setTestData();
 
 document.getElementById('save-expense').addEventListener('click', function (){
   let expenseData = getExpenseData(document.querySelector('section#Gasto'),select,checkboxExpense);
@@ -102,6 +78,7 @@ document.getElementById('save-expense').addEventListener('click', function (){
     updateTotalExpenses(cuenta.getExpensesList())
   }
 });
+
 document.getElementById('save-income').addEventListener('click', function (){
   let incomeData = getIncomeData(document.querySelector('section#Ingreso'),checkboxIncome);
   if (typeof incomeData !== 'undefined'){
@@ -111,7 +88,6 @@ document.getElementById('save-income').addEventListener('click', function (){
     updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
   }
 });
-
 
 let contentEls = document.querySelectorAll('#Historial .tab-content');
 tabBar.listen('MDCTabBar:activated', function(event) {

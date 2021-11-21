@@ -50,6 +50,8 @@
     <main class="main-content" id="main-content">
       <!-- Home -->
       <section id="Inicio" class="full-screen active">
+        <div class="section-content">
+        <div class="content-top">
         <div class="chart">
           <div class="chart-top">
             <div class="container">
@@ -67,9 +69,13 @@
           </div>
           <div class="balance-amount"></div>
         </div>
+      </div>
+      <div class="content-bottom">
         <div class="title-section">Recientes</div>
         <div class="summary">
         </div>
+      </div>
+      </div>
       </section>
       <!-- History -->
       <section id="Historial" class="full-screen">
@@ -103,25 +109,40 @@
         </div>
         <div id="income" class="tab-content active">
           <div class="content">
-            <div class="section-title">
-              Historial de ingresos
+            <div class="content-top">
+              <div class="section-title">
+                Historial de ingresos
+              </div>
+              <div class="history-container">
+              </div>
             </div>
-            <div class="history-container">
+            <div class="content-bottom">
+              <span class="material-icons">
+                attach_money
+                </span>                
             </div>
           </div>
         </div>
         <div id="expense" class="tab-content">
           <div class="content">
-            <div class="section-title">
-              Historial de ingresos
+            <div class="content-top">
+              <div class="section-title">
+                Historial de ingresos
+              </div>
+              <div class="history-container">
+              </div>
             </div>
-            <div class="history-container">
+            <div class="content-bottom">
+              <span class="material-icons">
+                money_off
+                </span>                
             </div>
           </div>
         </div>
       </section>
       <!-- Expense -->
       <section id="Gasto"class="full-screen">
+        <div class="section-container">
         <div class="form-container">
           <h2 class="section-title">Nuevo gasto</h2>
           <label class="mdc-text-field mdc-text-field--filled">
@@ -223,9 +244,16 @@
           </button>
           
         </div>
+        <div class="image-container">
+          <span class="material-icons">
+            trending_down
+            </span>
+        </div>
+      </div>
       </section>
       <!-- Income -->
       <section id="Ingreso" class="full-screen">
+        <div class="section-container">
         <div class="form-container">
           <h2 class="section-title">Nuevo ingreso</h2>
           <label class="mdc-text-field mdc-text-field--filled">
@@ -268,6 +296,12 @@
             <span class="mdc-button__label">Guardar</span>
           </button>
         </div>
+        <div class="image-container">
+          <span class="material-icons">
+            trending_up
+            </span>
+        </div>
+      </div>
       </section>
       <!-- Education -->
       <section id="Educacion" class="full-screen">
@@ -302,6 +336,10 @@
                 </div>
               </div>
             </div>
+      </section>
+      <!-- Savings -->
+      <section id="Ahorros" class="full-screen"> 
+        <div class="section-container"></div>
       </section>
       <!-- FAB -->
       <div class="fab-section">

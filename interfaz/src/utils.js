@@ -1,4 +1,6 @@
-
+import Expense from "../../dominio/expense"
+import Income from "../../dominio/income";
+import Balance from "../../dominio/balance";
 
 export const changeVisibleSection = (target) => {
     document.querySelector('section.full-screen.active')?.classList.remove('active');
@@ -41,75 +43,62 @@ export const changeAppTitle = (newTitle) => {
 
 };
 
-//update the history list
-export const updateHistory = (incomes,expenses) => {
-    var containerIncome = document.querySelector(`#Historial #income .content .history-container`);
-    containerIncome.innerHTML = '';
-    getSortedTransactions(incomes).forEach((element) => {
+const updateListTransactions = (list) => {
+    var container = document.querySelector(`#Historial #${list[0].type.toLowerCase()} .content .history-container`);
+    container.innerHTML = '';
+    getSortedTransactions(list).forEach((element) => {
+        let category = '';
+        if (element.category !== undefined){category = `<div class="category">${element.category}</div>`}
         let entry = document.createElement("div");
         entry.innerHTML += `\
-        <div class="entry">\
+        <div class="entry slide-in">\
             <div class="image-placeholder">\
                 <div class="circle">${element.name[0].toUpperCase()}</div>\
             </div>\
             <div class="middle-info">\
-                <div class="amount income">$${element.amount} </div>\
+                <div class="amount ${element.type.toLowerCase()}">$${element.amount} </div>\
                 <div class="item-name">${element.name}</div>\
             </div>\
             <div class="right-info">\
-                <div class="date income">${element.date.getDate()}/${element.date.getMonth()+1}/${element.date.getFullYear()}</div>\
+                <div class="date ${element.type.toLowerCase()}">${element.date.getDate()}/${element.date.getMonth()+1}/${element.date.getFullYear()}</div>\
+                ${category}\
             </div>\
         </div>`;
-        containerIncome.appendChild(entry)
+        container.appendChild(entry)
     });
-    var containerExpense = document.querySelector(`#Historial #expense .content .history-container`);
-    containerExpense.innerHTML = '';
-    getSortedTransactions(expenses).forEach((element) => {
-        let entry = document.createElement("div");
-        entry.innerHTML += `\
-        <div class="entry">\
-            <div class="image-placeholder">\
-                <div class="circle">${element.name[0].toUpperCase()}</div>\
-            </div>\
-            <div class="middle-info">\
-                <div class="amount expense">$${element.amount} </div>\
-                <div class="item-name">${element.name}</div>\
-            </div>\
-            <div class="right-info">\
-                <div class="date expense">${element.date.getDate()}/${element.date.getMonth()+1}/${element.date.getFullYear()}</div>\
-                <div class="category">${element.category}</div>\
-            </div>\
-        </div>`;
-        containerExpense.appendChild(entry)
-    });
-    let sortedAll = getSortedTransactions(incomes.concat(expenses));
+}
+const updateSummary = (list) => {
+    let sortedAll = getSortedTransactions(list);
     var containerSumary = document.querySelector(`#Inicio .summary`);
     containerSumary.innerHTML = '';
     for (let index = 0; index < 5; index++) {
+        let category = '';
+        if (sortedAll[index].category !== undefined){category = `<div class="category">${sortedAll[index].category}</div>`}
         let entry = document.createElement("div");
         entry.innerHTML += `\
-        <div class="entry">\
+        <div class="entry slide-in">\
             <div class="image-placeholder">\
                 <div class="circle">${sortedAll[index].name[0].toUpperCase()}</div>\
             </div>\
             <div class="middle-info">\
-                <div class="amount expense">$${sortedAll[index].amount} </div>\
+                <div class="amount ${sortedAll[index].type.toLowerCase()}">$${sortedAll[index].amount} </div>\
                 <div class="item-name">${sortedAll[index].name}</div>\
             </div>\
             <div class="right-info">\
-                <div class="date expense">${sortedAll[index].date.getDate()}/${sortedAll[index].date.getMonth()+1}/${sortedAll[index].date.getFullYear()}</div>\
-                <div class="category">${sortedAll[index].category}</div>\
+                <div class="date ${sortedAll[index].type.toLowerCase()}">${sortedAll[index].date.getDate()}/${sortedAll[index].date.getMonth()+1}/${sortedAll[index].date.getFullYear()}</div>\
+                ${category}\
             </div>\
         </div>`;
         containerSumary.appendChild(entry);
-        console.log('entry');
     }
-
-};
-
-export const updateSummary = () => {
-
 }
+
+//update the history list
+export const updateHistory = (incomes,expenses) => {
+    updateListTransactions(incomes);
+    updateListTransactions(expenses);
+    updateSummary(incomes.concat(expenses));
+};
 
 export const getExpenseData = (page,category,checkbox) => {
     let name = page.querySelector('.mdc-text-field #name');
@@ -157,7 +146,6 @@ export const getTotalExpenses = (expensesList) => {
     expensesList.forEach((expense) => {
         total += expense.amount;
     });
-    console.log(total);
     return total;
 }
 
@@ -187,4 +175,31 @@ export const verifyForm = (name, amount, date, category = undefined) => {
 export const displayBalance = (balance) => {
     let container = document.querySelector('.balance-amount');
     container.innerText =`$${balance.getBalanceMoney().toLocaleString("es-US")}`;
+}
+
+export const setTestData = () => {
+    let cuenta = new Balance;
+    let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
+    cuenta.addIncomeToBalance(sueldo);
+    let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+    cuenta.addIncomeToBalance(sueldo2);
+    let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+    cuenta.addIncomeToBalance(sueldo3);
+    let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner);
+    let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner2);
+    let renner3 = new Expense("renner3",2000,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner3);
+    let renner4 = new Expense("renner4",3200,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner4);
+    let renner5 = new Expense("renner5",200,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner5);
+    let renner6 = new Expense("renner6",800,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner6);
+    let renner7 = new Expense("renner7",900,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner7);
+    let renner8 = new Expense("renner8",1200,"2021-10-09","UYU","Ropa",true);
+    cuenta.addExpenseToBalance(renner8);
+    return cuenta;
 }

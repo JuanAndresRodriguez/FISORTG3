@@ -40,7 +40,6 @@
 @include list.deprecated-core-styles;
 @include textfield.core-styles;
 
-
 body {
     background-color: variables.$background-dark;
     margin: 0;
@@ -74,8 +73,7 @@ body {
     &.fade-in{
       visibility: visible;
       margin-bottom: 220px;
-      opacity: 1;
-      
+      opacity: 1; 
     }
   }
   &.expense {
@@ -91,24 +89,18 @@ body {
       visibility: visible;
       margin-bottom: 145px;
       opacity: 1;
-      
     }
   }
-  
 }
-
-
 .mdc-drawer-app-content {
   flex: auto;
   overflow: auto;
   position: relative;
 }
-
 .main-content {
   overflow: auto;
   height: 100%;
 }
-
 .app-bar {
   position: absolute;
 }
@@ -121,14 +113,14 @@ body {
 }
 .mdc-drawer {
   border: none;
-}
-.mdc-drawer .mdc-deprecated-list-item.mdc-list-item--activated {
-  @include list.deprecated-item-primary-text-ink-color(variables.$on-primary);
-  @include list.deprecated-item-graphic-ink-color(variables.$on-primary)
-}
-.mdc-drawer .mdc-deprecated-list-item {
-  @include list.deprecated-item-primary-text-ink-color(rgba(variables.$on-primary, .7));
-  @include list.deprecated-item-graphic-ink-color(rgba(variables.$on-primary, .7))
+  .mdc-deprecated-list-item.mdc-list-item--activated {
+    @include list.deprecated-item-primary-text-ink-color(variables.$on-primary);
+    @include list.deprecated-item-graphic-ink-color(variables.$on-primary)
+  }
+  .mdc-deprecated-list-item {
+    @include list.deprecated-item-primary-text-ink-color(rgba(variables.$on-primary, .7));
+    @include list.deprecated-item-graphic-ink-color(rgba(variables.$on-primary, .7))
+  }
 }
 .mdc-tab-bar {
   background-color: variables.$primary;
@@ -136,34 +128,14 @@ body {
 .mdc-tab {
   @include tab.text-label-color(rgba(variables.$on-primary, .7));
   @include tab.icon-color(rgba(variables.$on-primary, .7));
-}
-.mdc-tab--active {
-  @include tab.active-text-label-color(variables.$on-primary);
-  @include tab.active-icon-color(variables.$on-primary);
+  &--active {
+    @include tab.active-text-label-color(variables.$on-primary);
+    @include tab.active-icon-color(variables.$on-primary);
+  }
 }
 .mdc-tab-indicator--active > .mdc-tab-indicator__content--underline{
   border-color: variables.$on-primary;
 }
-#Historial .tab-content{
-  display: none;
-  color: white;
-  &.active {
-    display: block;
-  }
-  .content{
-    margin: 0 15px;
-    .section-title{
-      font-size: 24px;
-      margin: 15px 0;
-    }
-    .history-container{
-      display: flex;
-      gap: 25px;
-      flex-direction: column;
-    }
-  }
-}
-
 .entry {
   display: grid;
   height: 65px;
@@ -171,6 +143,13 @@ body {
   background-color: #1c1e21;
   padding: 5px 15px 5px 0;
   border-radius: 5px;
+  transition-duration: 600ms;
+  opacity: 0;
+  transform: translate(+100%);
+  &.slide-in{
+    transform: translate(0%);
+    opacity: 1;
+  }
   .image-placeholder{
     display: flex;
     align-items: center;
@@ -194,7 +173,6 @@ body {
       }
     }
   }
-  
   .right-info {
     text-align: right;
     font-size: 14px;
@@ -242,35 +220,61 @@ body {
     }
   }
 }
-
 section.full-screen {
   display: none;
   &.active{
     display: block;
   }
 }
-section#Gasto,section#Ingreso {
-  .form-container{
+section#Historial .tab-content{
+  display: none;
+  color: white;
+  &.active {
+    display: block;
+  }
+  .content{
+    margin: 0 15px;
     .section-title{
-      color: white;
+      font-size: 24px;
+      margin: 15px 0;
     }
-    margin: 30px auto 0 auto;
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    gap: 30px;
-    .mdc-checkbox {
-      @include checkbox.container-colors(white, '', variables.$secondary, variables.$secondary, '');
+    .history-container{
+      display: flex;
+      gap: 25px;
+      flex-direction: column;
     }
-    .mdc-form-field {
-      label {color: white;}
-    }
-    .mdc-button {
-      @include button.container-fill-color(variables.$secondary);
+    .content-bottom {
+      display: none;
     }
   }
 }
-
+section#Gasto,section#Ingreso {
+  .section-container{
+    .form-container{
+      display: block;
+      .section-title{
+        color: white;
+      }
+      margin: 30px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      gap: 30px;
+      .mdc-checkbox {
+        @include checkbox.container-colors(white, '', variables.$secondary, variables.$secondary, '');
+      }
+      .mdc-form-field {
+        label {color: white;}
+      }
+      .mdc-button {
+        @include button.container-fill-color(variables.$secondary);
+      }
+    }
+    .image-container {
+     display: none;
+    }
+  } 
+}
 section#Inicio {
   .chart{
     background-color: #00796B;
@@ -300,9 +304,7 @@ section#Inicio {
     border-radius: 5px;
     color: white;
     margin: 20px 15px 0 15px;
-    .title {
-      font-size: 20px;
-    }
+    font-size: 20px;
     .balance-amount {
       font-size: 26px;
       text-align: right;
@@ -331,7 +333,7 @@ section#Educacion {
       color: white;
       background-color: #1c1e21;
       img {
-        max-width: 100%;
+        width: 100%;
       }
       .info {
         padding: 15px;
@@ -346,4 +348,100 @@ section#Educacion {
     }
   }
 
+}
+// Desktop
+@media only screen and (min-width: 768px) {
+  section#Inicio{
+    .section-content {
+      margin-top: 100px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      .content-top{
+        width: 40%;
+      }
+      .content-bottom {
+        width: 40%;
+      }
+      .chart .chart-top {
+        .container{
+          padding-top: 10px;
+          .title {
+            font-size: 24px;
+          }
+          .amount {
+            font-size: 30px;
+          }
+        }
+      }
+    }
+  }
+  section#Educacion {
+    .cards-container {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      .container {
+        width: 30%;
+      }
+    }
+  }
+  section#Ingreso, section#Gasto{
+    .section-container{
+      display: flex;
+      flex-direction: row;
+      .form-container {
+        width: 45%;
+        #save-income, #save-expense {
+          width: 50%;
+          align-self: center;
+        }
+      }
+      .image-container {
+        width: 45%;
+        color: variables.$income;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        span{
+          font-size: 400px;
+        }
+      }
+    }
+  }
+  section#Gasto .section-container .image-container {
+    color: variables.$expense;
+  }
+  section#Historial {
+    #income, #expense {
+      .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        .content-top{
+          width: 40%;
+        }
+        .content-bottom {
+          width: 40%;
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          height: 100vh;
+          span{
+            font-size: 400px;
+          }
+        }
+      }
+    }
+    #income .content {
+      .content-bottom{
+        color: variables.$income;
+      }
+    }
+    #expense .content {
+      .content-bottom{
+        color: variables.$expense;
+      }
+    }
+  }
 }

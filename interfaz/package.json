@@ -44,6 +44,7 @@
     "@material/tab-bar": "^13.0.0",
     "@material/textfield": "^13.0.0",
     "@material/top-app-bar": "^13.0.0",
+    "chart.js": "^3.6.0",
     "material-components-web": "^13.0.0"
   }
 }

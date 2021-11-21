@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MisGastos</title>
     <link rel="stylesheet" href="bundle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900' rel='stylesheet' type='text/css'>
 </head>
           
 <body>
@@ -47,6 +48,29 @@
   <div class="mdc-drawer-scrim"></div>
   <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
     <main class="main-content" id="main-content">
+      <!-- Home -->
+      <section id="Inicio" class="full-screen active">
+        <div class="chart">
+          <div class="chart-top">
+            <div class="container">
+              <div class="title">Gastos del mes</div>
+              <div class="amount"></div>
+            </div> 
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="myChart" ></canvas>
+          </div>
+        </div>
+        <div class="balance">
+          <div class="title">
+            Tu balance actual es de:
+          </div>
+          <div class="balance-amount"></div>
+        </div>
+        <div class="title-section">Recientes</div>
+        <div class="summary">
+        </div>
+      </section>
       <!-- History -->
       <section id="Historial" class="full-screen">
         <div class="mdc-tab-bar" role="tablist">
@@ -78,33 +102,44 @@
           </div>
         </div>
         <div id="income" class="tab-content active">
-          <h1>Income</h1>
-          <ul></ul>
+          <div class="content">
+            <div class="section-title">
+              Historial de ingresos
+            </div>
+            <div class="history-container">
+            </div>
+          </div>
         </div>
         <div id="expense" class="tab-content">
-          <h1>Expense</h1>
-          <ul></ul>
+          <div class="content">
+            <div class="section-title">
+              Historial de ingresos
+            </div>
+            <div class="history-container">
+            </div>
+          </div>
         </div>
       </section>
-      <!-- Income -->
-      <section id="Ingreso"class="full-screen active">
+      <!-- Expense -->
+      <section id="Gasto"class="full-screen">
         <div class="form-container">
+          <h2 class="section-title">Nuevo gasto</h2>
           <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
-            <span class="mdc-floating-label" id="my-label-id">Nombre</span>
-            <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
+            <span class="mdc-floating-label" id="name-label">Nombre</span>
+            <input id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label" required>
             <span class="mdc-line-ripple"></span>
           </label>
           <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
-            <span class="mdc-floating-label" id="amount">Monto</span>
-            <input class="mdc-text-field__input" type="number" aria-labelledby="amount">
+            <span class="mdc-floating-label" id="amount-label">Monto</span>
+            <input step=".01" id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber" required>
             <span class="mdc-line-ripple"></span>
           </label>
           <label class="mdc-text-field mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
-            <span class="mdc-floating-label" id="date">Fecha</span>
-            <input class="mdc-text-field__input" type="date" aria-labelledby="date">
+            <span class="mdc-floating-label" id="date-label">Fecha</span>
+            <input id="date" class="mdc-text-field__input" type="date" aria-labelledby="date-label" max="9999-12-31" required>
             <span class="mdc-line-ripple"></span>
           </label>
           <div class="mdc-select mdc-select--filled demo-width-class mdc-select--required">
@@ -140,7 +175,7 @@
             </div>
           
             <div class="mdc-select__menu mdc-menu mdc-menu-surface mdc-menu-surface--fullwidth">
-              <ul class="mdc-deprecated-list" role="listbox" aria-label="Food picker listbox">
+              <ul class="mdc-deprecated-list" role="listbox" aria-label="Categoria">
                 <li class="mdc-deprecated-list-item mdc-deprecated-list-item--selected" aria-selected="true" data-value="" role="option">
                   <span class="mdc-deprecated-list-item__ripple"></span>
                 </li>
@@ -166,7 +201,7 @@
             </div>
           </div>
           <div class="mdc-form-field">
-            <div class="mdc-checkbox">
+            <div id="expense" class="mdc-checkbox">
               <input type="checkbox"
                     class="mdc-checkbox__native-control"
                     id="checkbox-1"/>
@@ -183,19 +218,102 @@
             </div>
             <label for="checkbox-1">Programar Mensualmente</label>
           </div>
+          <button id="save-expense" class="mdc-button mdc-button--raised" value="submit">
+            <span class="mdc-button__label">Guardar</span>
+          </button>
+          
         </div>
+      </section>
+      <!-- Income -->
+      <section id="Ingreso" class="full-screen">
+        <div class="form-container">
+          <h2 class="section-title">Nuevo ingreso</h2>
+          <label class="mdc-text-field mdc-text-field--filled">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="name-label">Nombre</span>
+            <input required id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label">
+            <span class="mdc-line-ripple"></span>
+          </label>
+          <label class="mdc-text-field mdc-text-field--filled">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="amount-label">Monto</span>
+            <input step=".01" required id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber">
+            <span class="mdc-line-ripple"></span>
+          </label>
+          <label class="mdc-text-field mdc-text-field mdc-text-field--filled">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="date-label">Fecha</span>
+            <input required id="date" class="mdc-text-field__input" type="date" aria-labelledby="date-label">
+            <span class="mdc-line-ripple"></span>
+          </label>
+          <div class="mdc-form-field">
+            <div id="income" class="mdc-checkbox">
+              <input type="checkbox"
+                    class="mdc-checkbox__native-control"
+                    id="checkbox-1"/>
+              <div class="mdc-checkbox__background">
+                <svg class="mdc-checkbox__checkmark"
+                    viewBox="0 0 24 24">
+                  <path class="mdc-checkbox__checkmark-path"
+                        fill="none"
+                        d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                </svg>
+                <div class="mdc-checkbox__mixedmark"></div>
+              </div>
+              <div class="mdc-checkbox__ripple"></div>
+            </div>
+            <label for="checkbox-1">Programar Mensualmente</label>
+          </div>
+          <button id="save-income" class="mdc-button mdc-button--raised">
+            <span class="mdc-button__label">Guardar</span>
+          </button>
+        </div>
+      </section>
+      <!-- Education -->
+      <section id="Educacion" class="full-screen">
+            <div class="title">
+              <div class="cards-container">
+                <div class="container">
+                  <div class="image">
+                    <img src="https://picsum.photos/400/200?blur=2" alt="Image">
+                  </div>
+                  <div class="info">
+                    <div class="title">Item title</div>
+                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellendus omnis aspernatur obcaecati molestiae error consectetur iusto? Sed error, magni tempore deserunt commodi delectus cum incidunt est. At, laboriosam expedita.</div>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="image">
+                    <img src="https://picsum.photos/400/200?blur=2" alt="Image">
+                  </div>
+                  <div class="info">
+                    <div class="title">Item title</div>
+                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellendus omnis aspernatur obcaecati molestiae error consectetur iusto? Sed error, magni tempore deserunt commodi delectus cum incidunt est. At, laboriosam expedita.</div>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="image">
+                    <img src="https://picsum.photos/400/200?blur=2" alt="Image">
+                  </div>
+                  <div class="info">
+                    <div class="title">Item title</div>
+                    <div class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellendus omnis aspernatur obcaecati molestiae error consectetur iusto? Sed error, magni tempore deserunt commodi delectus cum incidunt est. At, laboriosam expedita.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
       </section>
       <!-- FAB -->
       <div class="fab-section">
-        <button class="mdc-fab expense" aria-label="Favorite">
+        <button class="mdc-fab expense" aria-label="Down">
           <div class="mdc-fab__ripple"></div>
           <span class="mdc-fab__icon material-icons">trending_down</span>
         </button>
-        <button class="mdc-fab income" aria-label="Favorite">
+        <button class="mdc-fab income" aria-label="Up">
           <div class="mdc-fab__ripple"></div>
           <span class="mdc-fab__icon material-icons">trending_up</span>
         </button>
-        <button class="mdc-fab menu" aria-label="Favorite">
+        <button class="mdc-fab menu" aria-label="Add">
           <div class="mdc-fab__ripple"></div>
           <span class="mdc-fab__icon material-icons">add</span>
         </button>

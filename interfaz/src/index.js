@@ -1,4 +1,7 @@
 import "./styles/index.scss"
+import { changeVisibleSection, openFabSpeedDial, changeMenuIcon, addEventBalanceButtons,
+  updateHistory, changeAppTitle, cleanInput, getExpenseData, getIncomeData, displayBalance, updateTotalExpenses} from './utils';
+import { setData, myChart } from "./chart";
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
@@ -13,15 +16,10 @@ import {MDCSelect} from '@material/select';
 import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
 
-const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
-const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
-formField.input = checkbox;
-
+const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
+const checkboxIncome = new MDCCheckbox(document.querySelector('.mdc-checkbox#income'));
+const checkboxExpense = new MDCCheckbox(document.querySelector('.mdc-checkbox#expense'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
-
-
-
-//const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
 const edtTexts = [].map.call(document.querySelectorAll('.mdc-text-field'), function(el) {
   return new MDCTextField(el);
 });
@@ -36,17 +34,17 @@ const list = MDCList.attachTo(document.querySelector('.mdc-deprecated-list'));
 list.wrapFocus = true;
 //list 
 const listItemRipples = list.listElements.map((listItemEl) => new MDCRipple(listItemEl));
-
 // FAB 
 let fabButton = document.querySelector('.mdc-fab.menu')
 fabButton.addEventListener('click', (event) => {
-  openFabSpeedDial(event.taget);
+  openFabSpeedDial(fabButton);
 });
+addEventBalanceButtons(fabButton);
 
 //drawer toggle from app bar
 topAppBar.setScrollTarget(document.getElementById('main-content'));
 topAppBar.listen('MDCTopAppBar:nav', () => {
-  changeMenuIcon();
+  changeMenuIcon(topAppBarElement,drawer);
 });
 
 
@@ -54,92 +52,79 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
 listEl.addEventListener('click', (event) => {
-  changeMenuIcon();
+  updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+  changeMenuIcon(topAppBarElement,drawer);
   var target = event.target;
   drawer.open = false;
   let appTitle = document.getElementsByClassName('mdc-top-app-bar__title')[0];
   document.getElementsByClassName('mdc-list-item--activated')[0].classList.remove("mdc-list-item--activated");
   target.classList.add("mdc-list-item--activated");
-  appTitle.innerHTML = target.querySelector('.mdc-deprecated-list-item__text').innerText;
+  changeAppTitle(target.querySelector('.mdc-deprecated-list-item__text').innerText);
   changeVisibleSection(appTitle.innerText);
-
 });
 
+// test data
+let cuenta = new Balance;
+let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
+cuenta.addIncomeToBalance(sueldo);
+let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+cuenta.addIncomeToBalance(sueldo2);
+let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+cuenta.addIncomeToBalance(sueldo3);
+let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner);
+let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner2);
+let renner3 = new Expense("renner3",2000,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner3);
+let renner4 = new Expense("renner4",3200,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner4);
+let renner5 = new Expense("renner5",200,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner5);
+let renner6 = new Expense("renner6",800,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner6);
+let renner7 = new Expense("renner7",900,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner7);
+let renner8 = new Expense("renner8",1200,"2021-10-09","UYU","Ropa",true);
+cuenta.addExpenseToBalance(renner8);
 
 
-function changeVisibleSection(target){
-  document.querySelector('section.full-screen.active')?.classList.remove('active');
-  document.querySelector(`section#${CSS.escape(target)}`)?.classList.add('active');
-}
 
 
-//TODO: REFACTOR THIS FUNCTION AS SOON AS POSSIBLE
-function openFabSpeedDial(fabButtonMenu){
-  //slide up 3 more fab buttons
-  // income, expenses, QR
-  // onclick close
-  fabButton.classList.toggle('close')
-  let income = document.querySelector('.mdc-fab.income');
-  income.classList.toggle('fade-in');
-  income.addEventListener('click', (event) => {
-    openFabSpeedDial(fabButtonMenu);
-    fabButton.classList.add('mdc-fab--exited');
-  });
-  let expense = document.querySelector('.mdc-fab.expense');
-  expense.classList.toggle('fade-in');
-  expense.addEventListener('click', (event) => {
-    openFabSpeedDial(fabButtonMenu);
-    fabButton.classList.add('mdc-fab--exited');
-  });
-}
+document.getElementById('save-expense').addEventListener('click', function (){
+  let expenseData = getExpenseData(document.querySelector('section#Gasto'),select,checkboxExpense);
+  if (typeof expenseData !== 'undefined'){
+    let expense = new Expense(expenseData['name'],expenseData['amount'],expenseData['date'],'UYU',expenseData['category'],expenseData['monthly']);
+    cuenta.addExpenseToBalance(expense);
+    changeVisibleSection('Historial');
+    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+    setData(cuenta.getExpensesList());
+    updateTotalExpenses(cuenta.getExpensesList())
+  }
+});
+document.getElementById('save-income').addEventListener('click', function (){
+  let incomeData = getIncomeData(document.querySelector('section#Ingreso'),checkboxIncome);
+  if (typeof incomeData !== 'undefined'){
+    let income = new Income(incomeData['name'],incomeData['amount'],incomeData['date'],'UYU',incomeData['monthly']);
+    cuenta.addIncomeToBalance(income);
+    changeVisibleSection('Historial');
+    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+  }
+});
 
-function changeMenuIcon(){
-  let iconContainer = topAppBarElement.getElementsByClassName('mdc-top-app-bar__navigation-icon')[0];
-  let icon = iconContainer.innerHTML;
-  iconContainer.innerHTML = (icon == 'menu') ? 'arrow_back' : 'menu';
-  drawer.open = !drawer.open;
-}
 
 let contentEls = document.querySelectorAll('#Historial .tab-content');
 tabBar.listen('MDCTabBar:activated', function(event) {
   document.querySelector('.tab-content.active').classList.remove('active');
   contentEls[event.detail.index].classList.add('active');
-
-
-
+  updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
 });
 
-// let cuenta = new Balance;
-// let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
-// let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-// let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-// let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-// let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
-
-let incomes = cuenta.getIncomeList();
-incomes.forEach((element) => {
-  var ul = document.querySelector('#Historial #income ul');
-  let li = document.createElement("li");
-  li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
-  ul.appendChild(li);
-})
-
-let expenses = cuenta.getExpensesList();
-expenses.forEach((element) => {
-  var ul = document.querySelector('#Historial #expense ul');
-  let li = document.createElement("li");
-  li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
-  ul.appendChild(li);
-})
-
-// let history = cuenta.getIncomeList().concat(cuenta.getExpensesList());
-// let sortedHistory = history.sort((a,b) => a.date - b.date);
-// console.log(sortedHistory);
+setData(cuenta.getExpensesList());
+updateTotalExpenses(cuenta.getExpensesList());
+displayBalance(cuenta);
+updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList())
 
 
-// sortedHistory.forEach((element) => {
-//     var ul = document.getElementsByClassName('history');
-//     let li = document.createElement("li");
-//     li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
-//     ul[0].appendChild(li);
-//})
+
+

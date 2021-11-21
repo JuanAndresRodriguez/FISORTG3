@@ -1,3 +1,4 @@
+import cleanupCron from "./cron";
 import "./styles/index.scss"
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
@@ -12,6 +13,8 @@ import {MDCTextField} from '@material/textfield';
 import {MDCSelect} from '@material/select';
 import {MDCFormField} from '@material/form-field';
 import {MDCCheckbox} from '@material/checkbox';
+let cuenta = new Balance;
+
 
 const checkbox = new MDCCheckbox(document.querySelector('.mdc-checkbox'));
 const formField = new MDCFormField(document.querySelector('.mdc-form-field'));
@@ -109,13 +112,6 @@ tabBar.listen('MDCTabBar:activated', function(event) {
 
 });
 
-// let cuenta = new Balance;
-// let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
-// let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-// let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
-// let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
-// let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
-
 let incomes = cuenta.getIncomeList();
 incomes.forEach((element) => {
   var ul = document.querySelector('#Historial #income ul');
@@ -131,6 +127,7 @@ expenses.forEach((element) => {
   li.appendChild(document.createTextNode(element.name +": "+ element.amount + " " + element.currency));
   ul.appendChild(li);
 })
+
 
 // let history = cuenta.getIncomeList().concat(cuenta.getExpensesList());
 // let sortedHistory = history.sort((a,b) => a.date - b.date);

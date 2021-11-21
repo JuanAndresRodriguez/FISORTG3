@@ -10,21 +10,21 @@ let dataSueldo = {
     'amount': 600,
     'date' : '2021-10-07',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let dataSueldo2 ={
     'name': 'Sueldo2',
     'amount': 40,
     'date' : '2021-10-07',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let dataSueldo3 ={
     'name': 'Sueldo',
     'amount': 600,
     'date' : '2021-10-09',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let dataExpense ={
     'name': 'renner',
@@ -32,7 +32,7 @@ let dataExpense ={
     'date' : '2021-10-09',
     'cateogry' : 'Ropa',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let dataExpense2 ={
     'name': 'renner2',
@@ -40,14 +40,13 @@ let dataExpense2 ={
     'date' : '2021-10-09',
     'cateogry' : 'Ropa',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let sueldo = new Income(dataSueldo);
 let sueldo2 = new Income(dataSueldo2);
 let sueldo3 = new Income(dataSueldo3);
 let renner = new Expense(dataExpense);
 let renner2 = new Expense(dataExpense2);
-
 
 //check balance money
 test('add income to balance',() => {
@@ -88,25 +87,23 @@ test('check delete correct expense from balance',() =>{
     cuenta.deleteExpenseFromList(renner.getExpense());
     expect(cuenta.getExpensesList().length).toBe(0);
 });
-
 //saving tests
 let dataSaving ={
     'name': 'saving',
     'amount': 30,
     'date' : '2021-10-09',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let dataSaving2 ={
     'name': 'saving2',
     'amount': 30,
-    'date' : '2021-10-09',
+    'date' : '2021-11-09',
     'currency' : 'UYU',
-    'monthly' : true
+    'monthly' : false
 };
 let saving = new Saving(dataSaving);
 let saving2 = new Saving(dataSaving2);
-
 
 test('check add saving',()=>{
     cuenta.addSavingToList(saving.getSaving());
@@ -121,4 +118,11 @@ test('delete wrong saving from balance',()=>{
     expect(cuenta.getSavingList().length).toBe(1);
 });
 
-
+test('check monthly cleanup',()=> {
+    cuenta.addExpenseToBalance(renner2);
+    cuenta.addSavingToList(saving2);
+    cuenta.monthlyCleanup()
+    expect(cuenta.getExpensesList().length).toBe(0);
+    expect(cuenta.getIncomeList().length).toBe(0);
+    expect(cuenta.getSavingList().length).toBe(1);
+});

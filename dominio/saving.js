@@ -10,6 +10,7 @@ class Saving {
 		return {
 		name: this.name,
         amount: this.amount,
+        date: this.date,
         currency: this.currency,
         isMonthly: this.isMonthly,
 		};

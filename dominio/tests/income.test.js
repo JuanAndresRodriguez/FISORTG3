@@ -14,4 +14,5 @@ test('check creation of income',()=>{
     expect(sueldo.date.getTime()).toBe(new Date('2021-10-07').getTime());
     expect(sueldo.currency).toBe('UYU');
     expect(sueldo.isMonthly).toBe(true);
+    expect(sueldo.type).toBe('Income');
 });

@@ -16,4 +16,5 @@ test('check creation of income',()=>{
     expect(gasto.currency).toBe('UYU');
     expect(gasto.category).toBe('Ropa')
     expect(gasto.isMonthly).toBe(true);
+    expect(gasto.type).toBe('Expense');
 })

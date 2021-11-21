@@ -14,4 +14,5 @@ test('check creation of saving',()=>{
     expect(saving.date.getDate()).toBe(new Date('2021-10-09').getDate());
     expect(saving.currency).toBe('UYU');
     expect(saving.isMonthly).toBe(true);
+    expect(saving.type).toBe('Saving');
 })

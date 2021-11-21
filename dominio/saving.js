@@ -5,6 +5,7 @@ class Saving {
         this.date = new Date(dataArray['date']);
         this.currency = dataArray['currency'];
         this.isMonthly = dataArray['monthly'];
+        this.type = 'Saving';
     }
     getSaving() {
 		return {
@@ -13,6 +14,7 @@ class Saving {
         date: this.date,
         currency: this.currency,
         isMonthly: this.isMonthly,
+        type: 'Saving',
 		};
 	}
 }

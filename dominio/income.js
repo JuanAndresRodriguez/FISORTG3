@@ -5,6 +5,7 @@ class Income {
         this.date = new Date(date);
         this.currency = currency;
         this.isMonthly = isMonthly;
+        this.type = 'Income';
 	}
 
 	getIncome() {

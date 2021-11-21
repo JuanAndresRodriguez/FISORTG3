@@ -6,6 +6,7 @@ class Expense {
         this.currency = currency;
         this.category = category;
         this.isMonthly = isMonthly;
+        this.type = 'Expense';
 	}
 
 	getExpense() {

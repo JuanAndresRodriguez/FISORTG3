@@ -148,13 +148,13 @@
           <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="name-label">Nombre</span>
-            <input id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label" required>
+            <input  maxlength="15"  id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label" required>
             <span class="mdc-line-ripple"></span>
           </label>
           <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="amount-label">Monto</span>
-            <input step=".01" id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber" required>
+            <input max="9999999999" step=".01" id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber" required>
             <span class="mdc-line-ripple"></span>
           </label>
           <label class="mdc-text-field mdc-text-field mdc-text-field--filled">
@@ -289,19 +289,19 @@
           <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="name-label">Nombre</span>
-            <input required id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label">
+            <input maxlength="15" required id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label">
             <span class="mdc-line-ripple"></span>
           </label>
           <label class="mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="amount-label">Monto</span>
-            <input step=".01" required id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber">
+            <input max="9999999999" step=".01" required id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber">
             <span class="mdc-line-ripple"></span>
           </label>
           <label class="mdc-text-field mdc-text-field mdc-text-field--filled">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="date-label">Fecha</span>
-            <input required id="date" class="mdc-text-field__input" type="date" aria-labelledby="date-label">
+            <input max="9999-12-31" required id="date" class="mdc-text-field__input" type="date" aria-labelledby="date-label">
             <span class="mdc-line-ripple"></span>
           </label>
           <div class="mdc-form-field">
@@ -381,19 +381,19 @@
             <label class="mdc-text-field mdc-text-field--filled">
               <span class="mdc-text-field__ripple"></span>
               <span class="mdc-floating-label" id="name-label">Nombre</span>
-              <input required id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label">
+              <input maxlength="15" required id="name" class="mdc-text-field__input" type="text" aria-labelledby="name-label">
               <span class="mdc-line-ripple"></span>
             </label>
             <label class="mdc-text-field mdc-text-field--filled">
               <span class="mdc-text-field__ripple"></span>
               <span class="mdc-floating-label" id="amount-label">Monto</span>
-              <input step=".01" required id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber">
+              <input max="9999999999" step=".01" required id="amount" class="mdc-text-field__input" type="number" aria-labelledby="amount-laber">
               <span class="mdc-line-ripple"></span>
             </label>
             <label class="mdc-text-field mdc-text-field mdc-text-field--filled">
               <span class="mdc-text-field__ripple"></span>
               <span class="mdc-floating-label" id="date-label">Fecha</span>
-              <input required id="date" class="mdc-text-field__input" type="date" aria-labelledby="date-label">
+              <input required id="date" class="mdc-text-field__input" type="date" aria-labelledby="date-label" max="9999-12-31">
               <span class="mdc-line-ripple"></span>
             </label>
             <div class="mdc-form-field">

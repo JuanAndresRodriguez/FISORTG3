@@ -179,27 +179,60 @@ export const displayBalance = (balance) => {
 
 export const setTestData = () => {
     let cuenta = new Balance;
-    let sueldo = new Income("Sueldo",60000,"2021-10-07","UYU",true);
+    let dataSueldo ={
+        'name': 'Sueldo','amount': 60000,'date' : '2021-10-07','currency' : 'UYU','monthly' : true
+    };
+    let dataDevolucion ={
+        'name': 'Devolucion','amount': 50,'date' : '2021-10-07','currency' : 'UYU','monthly' : true
+    };
+    let dataTransferencia ={
+        'name': 'Transferencia','amount': 50,'date' : '2021-10-07','currency' : 'UYU','monthly' : true
+    };
+    let dataRopa ={
+        'name': 'Renner','amount': 200,'date' : '2021-10-09','currency' : 'UYU','category' : 'Ropa','monthly' : true
+    };
+    let dataComida ={
+        'name': 'Comida','amount': 50,'date' : '2021-10-09','currency' : 'UYU','category' : 'Comida','monthly' : true
+    };
+    let dataTransporte ={
+        'name': 'Transporte','amount': 100,'date' : '2021-10-09','currency' : 'UYU','category' : 'Transporte','monthly' : true
+    };
+    let dataHogar ={
+        'name': 'Agua y luz','amount': 2000,'date' : '2021-10-09','currency' : 'UYU','category' : 'Hogar','monthly' : true
+    };
+    let dataSalidas ={
+        'name': 'Salidas','amount': 400,'date' : '2021-10-09','currency' : 'UYU','category' : 'Salidas','monthly' : true
+    };
+    let dataOtros ={
+        'name': 'Supermercado','amount': 4000,'date' : '2021-10-09','currency' : 'UYU','category' : 'Otros','monthly' : true
+    };
+    let dataFacturas ={
+        'name': 'Tarjeta','amount': 400,'date' : '2021-10-09','currency' : 'UYU','category' : 'Facturas','monthly' : true
+    };
+    let dataTecnologias ={
+        'name': 'Cables','amount': 400,'date' : '2021-10-09','currency' : 'UYU','category' : 'Tecnologias','monthly' : true
+    };
+    let sueldo = new Income(dataSueldo);
     cuenta.addIncomeToBalance(sueldo);
-    let sueldo2 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+    let sueldo2 = new Income(dataDevolucion);
     cuenta.addIncomeToBalance(sueldo2);
-    let sueldo3 = new Income("Sueldo2",50,"2021-10-07","UYU",true);
+    let sueldo3 = new Income(dataTransferencia);
     cuenta.addIncomeToBalance(sueldo3);
-    let renner = new Expense("renner",200,"2021-10-09","UYU","Ropa",true);
+    let renner = new Expense(dataRopa);
     cuenta.addExpenseToBalance(renner);
-    let renner2 = new Expense("renner2",200,"2021-10-09","UYU","Ropa",true);
+    let renner2 = new Expense(dataComida);
     cuenta.addExpenseToBalance(renner2);
-    let renner3 = new Expense("renner3",2000,"2021-10-09","UYU","Ropa",true);
+    let renner3 = new Expense(dataTransporte);
     cuenta.addExpenseToBalance(renner3);
-    let renner4 = new Expense("renner4",3200,"2021-10-09","UYU","Ropa",true);
+    let renner4 = new Expense(dataHogar);
     cuenta.addExpenseToBalance(renner4);
-    let renner5 = new Expense("renner5",200,"2021-10-09","UYU","Ropa",true);
+    let renner5 = new Expense(dataSalidas);
     cuenta.addExpenseToBalance(renner5);
-    let renner6 = new Expense("renner6",800,"2021-10-09","UYU","Ropa",true);
+    let renner6 = new Expense(dataOtros);
     cuenta.addExpenseToBalance(renner6);
-    let renner7 = new Expense("renner7",900,"2021-10-09","UYU","Ropa",true);
+    let renner7 = new Expense(dataFacturas);
     cuenta.addExpenseToBalance(renner7);
-    let renner8 = new Expense("renner8",1200,"2021-10-09","UYU","Ropa",true);
+    let renner8 = new Expense(dataTecnologias);
     cuenta.addExpenseToBalance(renner8);
     return cuenta;
 }

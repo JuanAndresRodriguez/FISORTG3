@@ -1,6 +1,7 @@
 import Expense from "../../dominio/expense"
 import Income from "../../dominio/income";
 import Balance from "../../dominio/balance";
+import Saving from "../../dominio/saving";
 
 export const changeVisibleSection = (target) => {
     document.querySelector('section.full-screen.active')?.classList.remove('active');
@@ -92,12 +93,35 @@ const updateSummary = (list) => {
         containerSumary.appendChild(entry);
     }
 }
+const updateSavings = (list) => {
+    let sortedAll = getSortedTransactions(list);
+    var containerSavings = document.querySelector(`#Ahorros .saving-container`);
+    containerSavings.innerHTML = '';
+    sortedAll.forEach((element) => {
+        let entry = document.createElement("div");
+        entry.innerHTML += `\
+        <div class="entry slide-in">\
+            <div class="image-placeholder">\
+                <div class="circle">${element.name[0].toUpperCase()}</div>\
+            </div>\
+            <div class="middle-info">\
+                <div class="amount income">$${element.amount} </div>\
+                <div class="item-name">${element.name}</div>\
+            </div>\
+            <div class="right-info">\
+                <div class="date income">${element.date.getDate()}/${element.date.getMonth()+1}/${element.date.getFullYear()}</div>\
+            </div>\
+        </div>`;
+        containerSavings.appendChild(entry);
+    });
+}
 
 //update the history list
-export const updateHistory = (incomes,expenses) => {
+export const updateHistory = (incomes,expenses,savings) => {
     updateListTransactions(incomes);
     updateListTransactions(expenses);
     updateSummary(incomes.concat(expenses));
+    updateSavings(savings)
 };
 
 export const getExpenseData = (page,category,checkbox) => {
@@ -134,6 +158,24 @@ export const getIncomeData = (page,checkbox) => {
     }  
   }
 
+export const getSavingData = (page,checkbox) => {
+    let name = page.querySelector('.mdc-text-field #name');
+    let amount = page.querySelector('.mdc-text-field #amount');
+    let date = page.querySelector('.mdc-text-field #date');
+    if (verifyForm(name,amount,date)){
+        let savingData= []
+        savingData['name'] = name.value;
+        savingData['amount'] = parseInt(amount.value);
+        savingData['date'] = date.value + 'T00:00-0800';
+        savingData['monthly'] = checkbox.checked;
+        cleanInput(name, amount, date, checkbox);
+        return savingData;
+    } else {
+        alert('Ingrese todos los datos');
+    }  
+    
+  }
+
 export const getSortedTransactions = (list) => {
     return list.sort((a,b) => b.date - a.date)
 };
@@ -153,6 +195,11 @@ export const updateTotalExpenses = (expensesList) => {
    let container = document.querySelector('#Inicio .container .amount');
    container.innerText = `$${getTotalExpenses(expensesList).toLocaleString("es-US")}`;
 }
+
+export const updateTotalSavings = (cuenta) => {
+    let container = document.querySelector('#Ahorros .balance-container .balance-amount');
+    container.innerText = `$${cuenta.getSavingMoney().toLocaleString("es-US")}`;
+ }
 
 
 export const cleanInput = (name, amount, date, monthly, category = undefined) => {
@@ -234,5 +281,13 @@ export const setTestData = () => {
     cuenta.addExpenseToBalance(renner7);
     let renner8 = new Expense(dataTecnologias);
     cuenta.addExpenseToBalance(renner8);
+    let dataSaving ={
+        'name': 'Saving','amount': 5000,'date' : '2021-10-09','currency' : 'UYU','monthly' : true
+    };
+    cuenta.addSavingToList(new Saving(dataSaving));
+    let dataSaving2 ={
+        'name': 'Saving','amount': 5000,'date' : '2021-10-09','currency' : 'UYU','monthly' : true
+    };
+    cuenta.addSavingToList(new Saving(dataSaving2));
     return cuenta;
 }

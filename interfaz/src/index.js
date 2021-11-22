@@ -1,6 +1,7 @@
 import "./styles/index.scss";
 import { changeVisibleSection, openFabSpeedDial, changeMenuIcon, addEventBalanceButtons,
-  updateHistory, changeAppTitle, cleanInput, getExpenseData, getIncomeData, displayBalance, updateTotalExpenses, setTestData} from './utils';
+  updateHistory, changeAppTitle, cleanInput, getExpenseData, getIncomeData, displayBalance, updateTotalExpenses, setTestData,
+getSavingData, updateTotalSavings} from './utils';
 import { setData, myChart } from "./chart";
 import cleanupCron from "./cron";
 import Expense from "../../dominio/expense"
@@ -21,6 +22,7 @@ import {MDCCheckbox} from '@material/checkbox';
 const buttonRipple = new MDCRipple(document.querySelector('.mdc-button'));
 const checkboxIncome = new MDCCheckbox(document.querySelector('.mdc-checkbox#income'));
 const checkboxExpense = new MDCCheckbox(document.querySelector('.mdc-checkbox#expense'));
+const checkboxSaving = new MDCCheckbox(document.querySelector('.mdc-checkbox#saving'));
 const select = new MDCSelect(document.querySelector('.mdc-select'));
 const edtTexts = [].map.call(document.querySelectorAll('.mdc-text-field'), function(el) {
   return new MDCTextField(el);
@@ -54,7 +56,7 @@ topAppBar.listen('MDCTopAppBar:nav', () => {
 const listEl = document.querySelector('.mdc-drawer .mdc-deprecated-list');
 const mainContentEl = document.querySelector('.main-content');
 listEl.addEventListener('click', (event) => {
-  updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+  updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList(),cuenta.getSavingList());
   changeMenuIcon(topAppBarElement,drawer);
   displayBalance(cuenta)
   var target = event.target;
@@ -72,10 +74,10 @@ let cuenta = setTestData();
 document.getElementById('save-expense').addEventListener('click', function (){
   let expenseData = getExpenseData(document.querySelector('section#Gasto'),select,checkboxExpense);
   if (typeof expenseData !== 'undefined'){
-    let expense = new Expense(expenseData['name'],expenseData['amount'],expenseData['date'],'UYU',expenseData['category'],expenseData['monthly']);
+    let expense = new Expense(expenseData);
     cuenta.addExpenseToBalance(expense);
     changeVisibleSection('Historial');
-    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList(),cuenta.getSavingList());
     setData(cuenta.getExpensesList());
     updateTotalExpenses(cuenta.getExpensesList())
   }
@@ -84,10 +86,21 @@ document.getElementById('save-expense').addEventListener('click', function (){
 document.getElementById('save-income').addEventListener('click', function (){
   let incomeData = getIncomeData(document.querySelector('section#Ingreso'),checkboxIncome);
   if (typeof incomeData !== 'undefined'){
-    let income = new Income(incomeData['name'],incomeData['amount'],incomeData['date'],'UYU',incomeData['monthly']);
+    let income = new Income(incomeData);
     cuenta.addIncomeToBalance(income);
     changeVisibleSection('Historial');
-    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList(),cuenta.getSavingList());
+  }
+
+});
+
+document.getElementById('save-saving').addEventListener('click', function (){
+  let savingData = getSavingData(document.querySelector('section#Ahorros'),checkboxSaving);
+  if (typeof savingData !== 'undefined'){
+    let saving = new Saving(savingData);
+    cuenta.addSavingToList(saving);
+    updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList(),cuenta.getSavingList());
+    updateTotalSavings(cuenta);
   }
 });
 
@@ -95,11 +108,13 @@ let contentEls = document.querySelectorAll('#Historial .tab-content');
 tabBar.listen('MDCTabBar:activated', function(event) {
   document.querySelector('.tab-content.active').classList.remove('active');
   contentEls[event.detail.index].classList.add('active');
-  updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList());
+  updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList(),cuenta.getSavingList());
 });
 
 setData(cuenta.getExpensesList());
 updateTotalExpenses(cuenta.getExpensesList());
+updateTotalSavings(cuenta);
 displayBalance(cuenta);
-updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList())
+updateHistory(cuenta.getIncomeList(),cuenta.getExpensesList(),cuenta.getSavingList())
+
 

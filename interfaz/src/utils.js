@@ -132,7 +132,7 @@ export const getExpenseData = (page,category,checkbox) => {
         let expenseData= []
         expenseData['name'] = name.value;
         expenseData['amount'] = parseInt(amount.value);
-        expenseData['date'] = date.value;
+        expenseData['date'] = date.value + 'T00:00-0800';
         expenseData['monthly'] = checkbox.checked;
         expenseData['category'] = category.value;
         cleanInput(name, amount, date, checkbox, category);

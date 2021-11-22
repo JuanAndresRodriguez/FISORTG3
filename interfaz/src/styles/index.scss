@@ -46,6 +46,10 @@ body {
     font-family: variables.$fontFamily;
     display: flex;
     height: 100vh;
+    a {
+      text-decoration: none;
+      color: white;
+    }
 }
 .mdc-fab {
   position: absolute;
@@ -415,6 +419,9 @@ section#Educacion {
       flex-direction: row;
       .container {
         width: 30%;
+        img{
+          height: 375px;
+        }
       }
     }
   }

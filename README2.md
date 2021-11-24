@@ -85,3 +85,44 @@ Se implementó material desing para el diseño. Se pueden apreciar El header con
 Se cumple con los principios de accesibilidad WCAG. Para eso se probó la aplicación en el sitio https://www.webaccessibility.com/ que prueba si una página cumple con los standares WCAG, donde se obtuvo un puntaje del 97%.
 
 <img src="WCAG.png">
+
+## Codificación
+
+Los programadores utilizaron como IDE Visual Code en sus correspondientes máquinas personales para desarrollo local. Los estándares de codificación a seguir son los utilizados por Google, tanto para HTML, como para CSS y JavaScript. Se puede consultar más información sobre dichos estándares en los siguientes links:
+
+* [HTML & CSS](https://google.github.io/styleguide/htmlcssguide.html)
+* [JavaScript](https://google.github.io/styleguide/jsguide.html)
+
+Se utilizaron buenas prácticas de OOP. La lógica y la interfaz quedaron separadas en diferentes directorios. Las clases utilizadas son:
+
+* balance.js
+* category.js
+* expense.js
+* income.js
+* savings.js
+
+Para el análisis estático del código se utilizó eslint.js que puede configurarse para realizar el análisis estático del código, siguiendo el estilo de codificación de Google.
+
+## Test Unitario
+
+Se utilizó Jest para realizar el testing unitario. Los test quedaron bajo la carpeta test en el directorio de dominio, y se creó un test por clase, alcanzando un 100% de cobertura.
+
+
+ PASS  tests/income.test.js                                                                                            
+ PASS  tests/balance.test.js
+ PASS  tests/saving.test.js
+ PASS  tests/category.test.js
+ PASS  tests/expense.test.js
+                                             
+File         | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                                              
+-------------|---------|----------|---------|---------|-------------------
+All files    |     100 |      100 |     100 |     100 | 
+ balance.js  |     100 |      100 |     100 |     100 | 
+ category.js |     100 |      100 |     100 |     100 | 
+ expense.js  |     100 |      100 |     100 |     100 | 
+ income.js   |     100 |      100 |     100 |     100 | 
+ saving.js   |     100 |      100 |     100 |     100 | 
+
+
+Test Suites: 5 passed, 5 total
+Tests:       18 passed, 18 total

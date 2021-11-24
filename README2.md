@@ -126,3 +126,23 @@ All files    |     100 |      100 |     100 |     100 |
 
 Test Suites: 5 passed, 5 total
 Tests:       18 passed, 18 total
+
+## Test de sistema
+
+Se realizó test al sistema sobre la verisón congelada.
+
+## Reporte de Issues
+
+Son realizados en la sección de Issues de GitHub
+
+## Reflexión
+
+### Global
+Fue un trabajo interesante, mucho más dinámico que la primer parte donde aportó la experiencia profesional y pudo verse también reflejado el trabajo de la primer parte del obligatorio, el cuál facilitó y aclaró el camino a recorrer, lo cuál es distinto tanto de un aplicación con requerimientos ya impuestos, como de una aplicación donde no hay etapas previas de elicitación, lo cuál hace mucho más caótico el desarrollo. Tanto las tecnicas como material design así como el stack utilizado, son utilizados también en la industria al día de hoy, lo cuál hace útil el proyecto para apender o consolidar conocimientos en los mismos.
+
+### Juan Rodríguez
+Personalmente me gustó para retomar js que desde p1 no lo utilizaba en profundidad, y para conocer webpack y jest que me parecieron herramientas útiles. Los test de Jest me resultaron similares a los test que se realiza en Postman para probar apis. Mis aportes fueron principalmente en el dominio con la clase categoría, y algunos de los test, así como con la documentación del package y del proyecto. También con el análisis estático del código utilizando eslint. Fue muy valioso para mi la ayuda y experiencia de ambos compañeros que tienen mayores conocimientos en desarrollo con javascript.
+
+## Guillermo Ramírez
+
+## Nicolas Vega

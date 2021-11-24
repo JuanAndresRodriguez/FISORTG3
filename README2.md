@@ -131,6 +131,27 @@ Tests:       18 passed, 18 total
 
 Se realizó test al sistema sobre la verisón congelada.
 
+### Testing exploratorio
+
+Sesión de Testing Exploratorio
+|  |  |
+| -------- | -------- |
+| MISIÓN      | Probar casos borde al agregar un gasto     |
+| INICIO     | 23/11/2021 20:00     |
+| TESTER     | JA, NV, GR     |
+| ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 70% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 20 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 90 / 10 |
+| ARCHIVOS DE DATOS     |      |
+| NOTAS DE PRUEBAS     | Agrego nombres de gastos con números. Agrego gastos con números negativos     |
+| DEFECTOS     |      |
+| INCONVENIENTES     | El gasto con número nnegativo queda mal el signo. Mejor si permite solo positivo. El gasto de número negativo no se resta al saldo disponible.     |
+
+
+Métricas de Testing Exploratorio:
+1. Mision vs Oportunidad: 100-0
+1. Investigación y reporte: 0%
+1. Diseño y ejecución: 20 %
+1. Configuración de las pruebas: 80%
+
 ## Reporte de Issues
 
 Son realizados en la sección de Issues de GitHub
@@ -141,8 +162,12 @@ Son realizados en la sección de Issues de GitHub
 Fue un trabajo interesante, mucho más dinámico que la primer parte donde aportó la experiencia profesional y pudo verse también reflejado el trabajo de la primer parte del obligatorio, el cuál facilitó y aclaró el camino a recorrer, lo cuál es distinto tanto de un aplicación con requerimientos ya impuestos, como de una aplicación donde no hay etapas previas de elicitación, lo cuál hace mucho más caótico el desarrollo. Tanto las tecnicas como material design así como el stack utilizado, son utilizados también en la industria al día de hoy, lo cuál hace útil el proyecto para apender o consolidar conocimientos en los mismos.
 
 ### Juan Rodríguez
-Personalmente me gustó para retomar js que desde p1 no lo utilizaba en profundidad, y para conocer webpack y jest que me parecieron herramientas útiles. Los test de Jest me resultaron similares a los test que se realiza en Postman para probar apis. Mis aportes fueron principalmente en el dominio con la clase categoría, y algunos de los test, así como con la documentación del package y del proyecto. También con el análisis estático del código utilizando eslint. Fue muy valioso para mi la ayuda y experiencia de ambos compañeros que tienen mayores conocimientos en desarrollo con javascript.
+Personalmente me gustó para retomar js que desde p1 no lo utilizaba en profundidad, y para conocer webpack y jest que me parecieron herramientas útiles. Los test de Jest me resultaron similares a los test que se realiza en Postman para probar apis. Mis aportes fueron principalmente en el dominio con la clase categoría, y algunos de los test, así como con la documentación del package y del proyecto. También con el análisis estático del código utilizando eslint y el testing exploratorio. Fue muy valioso para mi la ayuda y experiencia de ambos compañeros que tienen mayores conocimientos en desarrollo con javascript.
 
 ## Guillermo Ramírez
 
 ## Nicolas Vega
+
+# Presentaciones individuales en clase
+Machine Learning en la Ingeniería de Software - Juan Andrés Rodríguez
+Material Design Web Components - Nicolas Vega

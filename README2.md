@@ -139,18 +139,25 @@ Sesión de Testing Exploratorio
 | MISIÓN      | Probar casos borde al agregar un gasto     |
 | INICIO     | 23/11/2021 20:00     |
 | TESTER     | JA, NV, GR     |
-| ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 70% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 20 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 90 / 10 |
-| ARCHIVOS DE DATOS     |      |
+| ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 10% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 80 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 100 / 0 |
+| ARCHIVOS DE DATOS     |  testing_exploratorio_docs/egresos.png    |
 | NOTAS DE PRUEBAS     | Agrego nombres de gastos con números. Agrego gastos con números negativos     |
 | DEFECTOS     |      |
-| INCONVENIENTES     | El gasto con número nnegativo queda mal el signo. Mejor si permite solo positivo. El gasto de número negativo no se resta al saldo disponible.     |
+| INCONVENIENTES     | El gasto con número negativo queda mal el signo. Mejor si permite solo positivo. El gasto de número negativo suma al balance total.     |
 
 
-Métricas de Testing Exploratorio:
-1. Mision vs Oportunidad: 100-0
-1. Investigación y reporte: 0%
-1. Diseño y ejecución: 20 %
-1. Configuración de las pruebas: 80%
+
+
+|  |  |
+| -------- | -------- |
+| MISIÓN      | Probar casos borde al agregar un ingreso     |
+| INICIO     | 23/11/2021 20:00     |
+| TESTER     | JA, NV, GR     |
+| ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 10% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 80 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 100 / 0 |
+| ARCHIVOS DE DATOS     |   testing_exploratorio_docs/ingresos.png   |
+| NOTAS DE PRUEBAS     | Agrego nombres de ingresos con números. Agrego ingresos con números negativos     |
+| DEFECTOS     |      |
+| INCONVENIENTES     | El ingreso con número negativo queda mal el signo. Mejor si permite solo positivo. El ingreso de número negativo se resta al balance total.     |
 
 ## Reporte de Issues
 

@@ -12,6 +12,8 @@ A su vez puede agregarse un ahorro nuevo. Esto serían ahorros previos del usuar
 
 ### Configuración de plataforma tecnológica para desarrollo y producción
 
+La configuración se hizo mayormente con node package manager (npm) el cuál gestiona todos los paquetes de node.
+
 ### Documentación del uso de librerías externas (package.json)
 > La documentación de package.json quedó también como anexo en package.md.
 
@@ -171,9 +173,9 @@ Fue un trabajo interesante, mucho más dinámico que la primer parte donde aport
 ### Juan Rodríguez
 Personalmente me gustó para retomar js que desde p1 no lo utilizaba en profundidad, y para conocer webpack y jest que me parecieron herramientas útiles. Los test de Jest me resultaron similares a los test que se realiza en Postman para probar apis. Mis aportes fueron principalmente en el dominio con la clase categoría, y algunos de los test, así como con la documentación del package y del proyecto. También con el análisis estático del código utilizando eslint y el testing exploratorio. Fue muy valioso para mi la ayuda y experiencia de ambos compañeros que tienen mayores conocimientos en desarrollo con javascript.
 
-## Guillermo Ramírez
+### Guillermo Ramírez
 
-## Nicolas Vega
+### Nicolas Vega
 
 # Presentaciones individuales en clase
 Machine Learning en la Ingeniería de Software - Juan Andrés Rodríguez

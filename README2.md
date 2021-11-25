@@ -142,7 +142,7 @@ Sesión de Testing Exploratorio
 | ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 10% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 80 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 100 / 0 |
 | ARCHIVOS DE DATOS     |  testing_exploratorio_docs/egresos.png    |
 | NOTAS DE PRUEBAS     | Agrego nombres de gastos con números. Agrego gastos con números negativos     |
-| DEFECTOS     |      |
+| DEFECTOS     |   #26   |
 | INCONVENIENTES     | El gasto con número negativo queda mal el signo. Mejor si permite solo positivo. El gasto de número negativo suma al balance total.     |
 
 
@@ -156,7 +156,7 @@ Sesión de Testing Exploratorio
 | ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 10% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 80 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 100 / 0 |
 | ARCHIVOS DE DATOS     |   testing_exploratorio_docs/ingresos.png   |
 | NOTAS DE PRUEBAS     | Agrego nombres de ingresos con números. Agrego ingresos con números negativos     |
-| DEFECTOS     |      |
+| DEFECTOS     |  #25   |
 | INCONVENIENTES     | El ingreso con número negativo queda mal el signo. Mejor si permite solo positivo. El ingreso de número negativo se resta al balance total.     |
 
 ## Reporte de Issues

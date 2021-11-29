@@ -174,6 +174,9 @@ Fue un trabajo interesante, mucho más dinámico que la primer parte donde aport
 Personalmente me gustó para retomar js que desde p1 no lo utilizaba en profundidad, y para conocer webpack y jest que me parecieron herramientas útiles. Los test de Jest me resultaron similares a los test que se realiza en Postman para probar apis. Mis aportes fueron principalmente en el dominio con la clase categoría, y algunos de los test, así como con la documentación del package y del proyecto. También con el análisis estático del código utilizando eslint y el testing exploratorio. Fue muy valioso para mi la ayuda y experiencia de ambos compañeros que tienen mayores conocimientos en desarrollo con javascript.
 
 ### Guillermo Ramírez
+Me pareció un proyecto muy interesante, tuve que salir de mi zona de confort creando tests ya que es la primera vez que lo hago, trabajar con jest fue una experiencia muy buena, me ayudó a tener un mayor entendimiento sobre la utilidad de tener el codigo bajo tests unitarios. Creo que con mas tiempo y pudiendo utilizar base de datos, este proyecto podría haber sido aun mejor ya que tuvimos varias ideas las cuales por temas de tiempo no llegamos a desarrollarlas por completo.
+Creo que tuvimos problemas a la hora de organizar el trabajo ya que decidimos en dividir el trabajo en front y back, pero no anticipamos que el front sea tan complejo y el back sea tan sencillo lo cual nos generó dificultades a la hora de desarrollar y manejar el tiempo.
+Personalmente trabajé en las clases de balance, expense, income, y saving y también de sus correspondientes tests unitarios, ademas trabajé en el cron que borra los datos mensualmente. 
 
 ### Nicolas Vega
 

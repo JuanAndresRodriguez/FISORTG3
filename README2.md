@@ -179,6 +179,11 @@ Creo que tuvimos problemas a la hora de organizar el trabajo ya que decidimos en
 Personalmente trabajé en las clases de balance, expense, income, y saving y también de sus correspondientes tests unitarios, ademas trabajé en el cron que borra los datos mensualmente. 
 
 ### Nicolas Vega
+Particularmente me parecio muy interesante el poder poner en practica dentro de la facultad conocimientos que uso diariamente en mi trabajo, asi como el poder abarcar areas nuevas que nunca tuve la necesidad o el tiempo de abordar.
+Mi aporte al proyecto se puede determinar en dos partes: por un lado, me encargue de la configuracion y estructura del entorno de WebPack, separacion de interfaz y dominio e intalacion de paquetes de node escenciales. Por otro lado, a medida que el proyecto fue avanzando, me encargue del front-end del mismo. Me base en la busqueda de documentacion sobre material design, web components, graficas, accesibilidad y diseños responsive.
+En cuanto a la organizacion del trabajo en equipo, en primera instancia, pensamos que la division de tareas en base a experiencia propia iba a ser la mejor. Al poco tiempo, nos fuimos dando cuenta de que no era la mejor disposicion por la cantidad de trabajo en algunas areas.
+Desde mi lugar, entrego el proyecto habiendo conseguido experiencia en areas que me serviran para toda la carrera.
+
 
 # Presentaciones individuales en clase
 Machine Learning en la Ingeniería de Software - Juan Andrés Rodríguez

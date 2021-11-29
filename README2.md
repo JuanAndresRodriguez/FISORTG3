@@ -12,7 +12,9 @@ A su vez puede agregarse un ahorro nuevo. Esto serían ahorros previos del usuar
 
 ### Configuración de plataforma tecnológica para desarrollo y producción
 
-La configuración se hizo mayormente con node package manager (npm) el cuál gestiona todos los paquetes de node.
+Se utilizo webpack como budler, por lo tanto, la base del proyecto es Node.js
+Se dividio en dos la estructura del proyecto, separando el dominio de la interfaz, cada uno con sus propios paquetes de node detallados en su package.json
+En base a node, se lee la enviromental variable de la computadora donde se correra el codigo para saber si se compila para produccion o development. En windows esto se logra gracias a la ayuda de cross-env.
 
 ### Documentación del uso de librerías externas (package.json)
 > La documentación de package.json quedó también como anexo en package.md.
@@ -153,7 +155,7 @@ Sesión de Testing Exploratorio
 |  |  |
 | -------- | -------- |
 | MISIÓN      | Probar casos borde al agregar un ingreso     |
-| INICIO     | 23/11/2021 20:00     |
+| INICIO     | 23/11/2021 21:00     |
 | TESTER     | JA, NV, GR     |
 | ESTRUCTURA DE DIVISIÓN      | DURACIÓN: Corta (30 minutos) DISEÑO Y EJECUCIÓN DE PRUEBAS: 10% INVESTIGACIÓN Y REPORTES DE DEFECTOS: 80 % ARMADO DE LA SESIÓN: 10% OBJETIVO vs. OPORTUNIDAD: 100 / 0 |
 | ARCHIVOS DE DATOS     |   testing_exploratorio_docs/ingresos.png   |
